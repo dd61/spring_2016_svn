@@ -1,0 +1,104 @@
+\documentclass[11pt,dvipsnames]{article}
+
+\usepackage{etex}
+\usepackage{amssymb,amsmath,multicol} %<-- InWorksheetExam1 i also have fancyhdr,
+
+\usepackage[metapost]{mfpic}
+\usepackage[pdftex]{graphicx}
+
+\usepackage{pst-plot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\usepackage{tikz}
+\usepackage{tkz-2d}
+\usepackage{tkz-base}
+\usetikzlibrary{calc}
+\usepackage{color}
+\usepackage[inline]{enumitem}
+\usepackage{refcount}%<-- non in WorksheetExam1
+
+\usepackage[linewidth=1pt]{mdframed}
+
+\usepackage{caption}
+%\renewcommand{\headrulewidth}{0pt}
+
+%%These three lines are for the typewriter font. Comment them out if I don't want the font.
+%%%%%%\renewcommand*\ttdefault{lcmtt}
+%%%%%%\renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
+%%%%%%\usepackage[T1]{fontenc}
+%%%%%%
+
+\usepackage{tabularx, booktabs}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\newcommand{\vasymptote}[2][]{
+	\draw [densely dashed,#1] ({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});
+}
+
+\newcommand{\inlineitem}[1][]{%
+	\ifnum\enit@type=\tw@
+	{\descriptionlabel{#1}}
+	\hspace{\labelsep}%
+	\else
+	\ifnum\enit@type=\z@
+	\refstepcounter{\@listctr}\fi
+	\quad\@itemlabel\hspace{\labelsep}%
+	\fi}
+
+\usetikzlibrary{automata}
+
+\usepackage{hyperref}% http://ctan.org/pkg/hyperref
+
+\usepackage{geometry}
+\geometry{
+	%a4paper,
+	%total={170mm,257mm},
+	%left=20mm,
+	%top=20mm,
+	text={.8\paperwidth,.9\paperheight}, ratio=1:1,includefoot
+}
+
+
+
+\opengraphsfile{Wk5_Questions_Spring_16}
+
+\begin{document}
+%\thispagestyle{empty}
+\begin{enumerate}[label= {\bf  \arabic*:}]
+	\item The parabola $\displaystyle f(x)=x^2$ can take any real number as input (so its domain is $(-\infty,\infty)$). It can only output zero and positive numbers (so the range is $[0,\infty)$). This parabola opens up, and its lowest point is $(0,0)$. Let's move the  parabola around, and finds its main features.
+
+\begin{enumerate}[label=$\hdots$ {\bf  \alph*:}]
+\item Move $f(x)$ by 2 units to the left and two units up. Write the equation of this new function  (simplify as much as possible, so that your answer contains no parentheses), draw the graph and find the domain, range and lowest point.
+\item  Start with $\displaystyle f(x)=x^2$. Move $f(x)$ by 2 units to the left, and then reflect the graph around the $x$-axis. As before, write the equation, graph, and find the domain, range and highest point.
+\item  Go back to $\displaystyle f(x)=x^2$. Move $f(x)$ by 2 units up, then reflect around the $x$-axis. Answer the same questions about domain, range etc.
+\item  Go back to $\displaystyle f(x)=x^2$ again.  Move $f(x)$ by 2 units to the left, and then reflect the graph around the $y$-axis. Answer the same questions as above.
+\item  What transformations of $\displaystyle f(x)=x^2$ result in the parabola $\displaystyle y=-x^2+2x+2$?
+\end{enumerate} 
+
+\item The simplest polynomial of degree 3 is $\displaystyle g(x)=x^3$. The graph of this function is on page 159 of the textbook.
+\begin{enumerate}[label=$\hdots$ {\bf  \alph*:}]
+\item What are the domain and range of $\displaystyle g(x)=x^3$?
+\item As $x$ values become larger and larger (in shorthand: $\displaystyle x\to \infty$) what happens to the $y$ values? 
+\item As $x$ values become larger and larger, but negative (in shorthand: $\displaystyle x\to -\infty$) what happens to the $y$ values?
+\item Does the graph of $g(x)$ have any peaks or valleys? 
+\item Does $g(x)$ have an inverse? Why of why not?
+\end{enumerate}
+\item The simplest polynomial of degree 4 is $\displaystyle h(x)=x^4$. See page 159 for the graph.
+\begin{enumerate}[label=$\hdots$ {\bf  \alph*:}]
+	\item What are the domain and range of $\displaystyle h(x)=x^4$?
+	\item As $x$ values become larger and larger (in shorthand: $\displaystyle x\to \infty$) what happens to the $y$ values? 
+	\item As $x$ values become larger and larger, but negative (in shorthand: $\displaystyle x\to -\infty$) what happens to the $y$ values?
+	\item Does the graph of $h(x)$ have any peaks or valleys? 
+	\item Does $h(x)$ have an inverse? Why of why not?
+\end{enumerate}
+\item A polynomial function is given by the formula $\displaystyle f(x)=(x+1)(x-1)(x+2)^2$.
+\begin{enumerate}[label=$\hdots$ {\bf  \alph*:}]
+	\item What is the domain of $\displaystyle f(x)$?
+	\item What is the range of $\displaystyle f(x)$?
+	\item Find the $x$-intercepts (these are the points where the graph crosses the $x$-axis.)
+	\item Find the $y$-intercept(s) (how many are there?)
+	\item Redo the problem with the function $\displaystyle g(x)=(x+1)(x-1)(x+2)$.
+\end{enumerate}
+\end{enumerate}
+\end{document}                 

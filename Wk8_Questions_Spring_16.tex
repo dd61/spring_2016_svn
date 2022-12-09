@@ -1,0 +1,95 @@
+\documentclass[11pt,dvipsnames]{article}
+
+\usepackage{etex}
+\usepackage{amssymb,amsmath,multicol} %<-- InWorksheetExam1 i also have fancyhdr,
+
+\usepackage[metapost]{mfpic}
+\usepackage[pdftex]{graphicx}
+
+\usepackage{pst-plot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\usepackage{tikz}
+\usepackage{tkz-2d}
+\usepackage{tkz-base}
+\usetikzlibrary{calc}
+\usepackage{color}
+\usepackage[inline]{enumitem}
+\usepackage{refcount}%<-- non in WorksheetExam1
+
+\usepackage[linewidth=1pt]{mdframed}
+
+\usepackage{caption}
+%\renewcommand{\headrulewidth}{0pt}
+
+%%These three lines are for the typewriter font. Comment them out if I don't want the font.
+%%%%%%\renewcommand*\ttdefault{lcmtt}
+%%%%%%\renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
+%%%%%%\usepackage[T1]{fontenc}
+%%%%%%
+\makeatletter
+\newcommand{\inlineitem}[1][]{%
+	\ifnum\enit@type=\tw@
+	{\descriptionlabel{#1}}
+	\hspace{\labelsep}%
+	\else
+	\ifnum\enit@type=\z@
+	\refstepcounter{\@listctr}\fi
+	\quad\@itemlabel\hspace{\labelsep}%
+	\fi}
+\makeatother
+\parindent=0pt
+
+\usepackage{tabularx, booktabs}
+
+
+\opengraphsfile{Wk8_Questions_Spring_16}
+
+\begin{document}
+%\thispagestyle{empty}
+The difference between linear growth and exponential growth is that with linear growth, a quantity increases or decreases by a constant number, while in exponential growth, a quantity increases or decreases by a constant percent.
+
+Exponential growth leads to repeated doubling, and exponential decay leads to repeated halving. The time it takes for a population to double (assuming that it is growing exponentially) is called the doubling time. The time it takes for a quantity to become half of what it was initially (assuming it decreases exponentially) is called the half life.
+
+
+	\begin{enumerate}[label= {\bf  \arabic*:}, leftmargin=*]
+		\item A new car was sold at \$30,000. Assume that the value of the car depreciates by 5\% per year. What is the value of the car one year after the purchase? Two years after the purchase? What is a formula that gives the value $V(t)$ of the car after $t$ years?
+		
+\item Suppose a single bacterium is placed in a bottle at 11:00 am. It grows and at 11:01 am it divides into two bacteria. The two bacteria grow and at 11:02 am each of them divides into two bacteria, and so on. The bacteria continues to double every minute, and the bottle is full at noon. %The bottle contains $\displaystyle 2^{60}$ bacteria, which are doomed, because the bottle is full. 
+%Let's try to understand how the bacteria can avert disaster.
+
+\begin{enumerate}
+	\item Here are three possible options for the number of bacteria in the bottle at 11:30 am. Which is correct, and why?
+	\begin{enumerate}[label= { \textcolor{blue}{(\Alph*)}}]
+		\item $2\times 30$ \inlineitem $\displaystyle 2^{30}$ \inlineitem $\displaystyle 2\times 10^{30}$
+	\end{enumerate}
+	\item How many more bacteria are in the bottle at 11:31 am than at 11:30 am? How do you know?
+\item  At what time is  the bottle half-full? 
+
+\item  It is 11:56 am. What fraction of the bottle is full at this time?
+ 
+
+
+%%%%%%\item  At 11:56 am, the bacteria in the first bottle distribute themselves equally into three additional empty bottles (so at 11:56 am there are four bottles, each containing the same number of bacteria). How many minutes will it take for the four bottles to be full? 
+
+\item Assume that each bacterium has a volume of $\displaystyle 10^{-21} \text{m} ^3$. The volume of the Earth is $\displaystyle 1.083\times 10^{21 }\text{m}^3$. How long would it take until their volume exceeds the volume of the Earth?
+
+%\item The total surface area of the Earth is about 
+%$\displaystyle 5.1 \times 10^{14} \text{m} ^2$. After two hours of doubling, how thick would the layer of bacteria over the Earth be? Would it be knee-deep? (Note: A volume divided by an area gives a depth.)
+
+\end{enumerate}
+
+
+	\item A town's population increases in one year from 100,000 people to 100,100 people.
+	\begin{enumerate}
+		\item If the population grows linearly, what is the population size after 20 years?
+		\item if the population grows exponentially, what is the population size after 20 years?
+	\end{enumerate}
+	\item A country experiences a period of hyperinflation, where the price of food increases by 25\% per month. If a family food bill for a given month was \$200, what is the food bill for the family 2 months later? (Assume that the family purchased the same items, and in the same quantity, in the two months under consideration.)
+
+\item The population of an endangered species is decreasing by 10\% per year. How many years will it take the population to drop by half?
+\item A population is growing by 10\% per year. By what factor will it grow in 10 years?
+\item A population doubles every 4 hours. By what factor does it grow in 12 hours?
+\end{enumerate}
+\end{document}                 

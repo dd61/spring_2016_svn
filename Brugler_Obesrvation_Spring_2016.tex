@@ -1,0 +1,265 @@
+\documentclass[11pt,dvipsnames]{article}
+
+\usepackage{etex}
+\usepackage{amssymb,amsmath,multicol} %<-- InWorksheetExam1 i also have fancyhdr,
+
+\usepackage[metapost]{mfpic}
+\usepackage[pdftex]{graphicx}
+
+\usepackage{pst-plot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\usepackage{tikz}
+\usepackage{tkz-2d}
+\usepackage{tkz-base}
+\usetikzlibrary{calc}
+\usepackage{color}
+\usepackage[inline]{enumitem}
+\usepackage{refcount}%<-- non in WorksheetExam1
+\usepackage{changepage}% http://ctan.org/pkg/changepage
+
+%%%%\usepackage[linewidth=1pt]{mdframed}
+
+%%%%\usepackage{caption}
+%\renewcommand{\headrulewidth}{0pt}
+
+%%These three lines are for the typewriter font. Comment them out if I don't want the font.
+%%%%%%\renewcommand*\ttdefault{lcmtt}
+%%%%%%\renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
+%%%%%%\usepackage[T1]{fontenc}
+%%%%%%
+
+\usepackage{tabularx, booktabs}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+
+
+%\usepackage{background}
+%\newsavebox\mybox
+%\savebox\mybox{\tikz[color=red!50,opacity=0.4]\node{Draft};}
+
+\newcommand{\vasymptote}[2][]{
+	\draw [densely dashed,#1] ({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});
+}
+
+\newcommand{\inlineitem}[1][]{%
+	\ifnum\enit@type=\tw@
+	{\descriptionlabel{#1}}
+	\hspace{\labelsep}%
+	\else
+	\ifnum\enit@type=\z@
+	\refstepcounter{\@listctr}\fi
+	\quad\@itemlabel\hspace{\labelsep}%
+	\fi}
+
+\usetikzlibrary{automata}
+
+\usepackage{hyperref}% http://ctan.org/pkg/hyperref
+
+\usepackage{geometry}
+\geometry{
+	%a4paper,
+	%total={170mm,257mm},
+	%left=20mm,
+	%top=20mm,
+	text={.8\paperwidth,.9\paperheight}, ratio=1:1,includefoot
+}
+
+
+\setlength{\parindent}{0pt} % disable paragraph indentation
+\newlength{\linesepskip}
+\setlength{\linesepskip}{2pt} % adjust to suit
+
+\newcommand*{\linesep}[1]{%
+	\par\nobreak
+	\vskip 3pt \leaders\vrule width #1\vskip 0.81pt
+	\nobreak
+}
+
+\usepackage{tabu}
+
+%\backgroundsetup{angle=60,contents={\usebox\mybox}}
+\begin{document}
+	\begin{center}
+		{\Large Classroom Observation Report}
+	\end{center}
+\begin{minipage}{0.35\textwidth}
+		Dr.~Mercer R. Brugler \par
+		\linesep{\textwidth}
+		Instructor
+	\end{minipage}
+\hspace{0.2\textwidth}
+	\begin{minipage}{0.35\textwidth}
+			SCNC1-UC-3218 \par
+			\linesep{\textwidth}
+			Course
+		\end{minipage}
+		
+\vskip 1cm
+		
+\begin{minipage}{0.35\textwidth}
+	Donatella Delfino \par
+	\linesep{\textwidth}
+	Observer
+\end{minipage}
+\hspace{0.2\textwidth}
+\begin{minipage}{0.35\textwidth}
+	Feb. 29, 2016 \par
+	\linesep{\textwidth}
+	Date of observation
+\end{minipage}
+
+\vskip 1cm
+
+\begin{minipage}{0.35\textwidth}
+	7 \par
+	\linesep{\textwidth}
+	\# of students present
+\end{minipage}
+
+\vskip 1cm
+
+\begin{minipage}{0.35\textwidth}
+	6:10 pm \par
+	\linesep{\textwidth}
+	Observer's arrival time
+\end{minipage}
+\hspace{0.2\textwidth}
+\begin{minipage}{0.35\textwidth}
+	7:45 pm \par
+	\linesep{\textwidth}
+	Observer's departure time
+\end{minipage}
+
+\vskip 1cm
+{\large Observer}
+
+Comment on and rate each item below and add comments in space provided:
+\vskip 0.5cm
+
+%%\begin{minipage}{\linewidth}
+%%	\centering 
+%%	\begin{tabular}[t]{|c|c|c|c|c|p{3cm}|}
+%%		\hline
+%%		5 = Excellent    & 4 =Very Good & 3 = Good & 2 = Fair & 1 = Poor & NA = Not appropriate for this class  \\ \hline
+		
+%%	\end{tabular}
+%%\end{minipage}
+
+{\tabulinesep=1.2mm
+	\begin{tabu}{c  c c c c p{4cm} }
+		
+		5 = Excellent   & 4 =Very Good & 3 = Good & 2 = Fair & 1 = Poor & NA = Not appropriate for this class  \\ 	
+	\end{tabu}}
+\vskip 0.5cm
+
+\begin{enumerate}[label= {\bf  \arabic*:}]
+	\item
+	\begin{tabular}[t]{p{0.6\textwidth} p{2cm} p{2cm} }
+		Knowledge of subject &  & Rating: 5 \\
+	\end{tabular} 
+	
+	
+	\item 	\begin{tabular}[t]{p{0.6\textwidth} p{2cm} p{2cm} }
+		Clarity of learning objectives for the course as a whole and for the week's lesson within the course & & Rating: 5 
+	\end{tabular} 
+	\item 	\begin{tabular}[t]{p{0.6\textwidth} p{2cm} p{2cm} }
+		Clarity of criteria for assessing student performance for all activities & & Rating: 5\\
+		& & \\
+		Each part of the quiz clearly states which part of the previous week's material is being tested. Dr.~Brugler has developed detailed grading rubrics for the student-led chapter discussions from Carroll's book, and for the current event presentation. &  & \\
+		\end{tabular} 
+    \item 	\begin{tabular}[t]{p{0.6\textwidth} p{2cm} p{2cm} }
+	Selection of appropriate instructional materials and methods & & Rating: 5 \\
+	& &\\
+	Dr.~Brugler has paid careful attention in developing a syllabus that exposes students to evolutionary biology through a variety of lenses: textbooks, films, podcasts, and virtual labs. Students learn actively by leading class discussions, giving a presentation on current events, posting on weekly class forums, optional museum visits and writing a term paper. Additionally, students learn to think on their feet by giving one minute ``elevator pitches" where they either explain a scientific concept in everyday language, or they refute a misconception about evolutionary biology. & &\\
+\end{tabular} 
+\item 	\begin{tabular}[t]{p{0.6\textwidth} p{2cm} p{2cm} }
+	Effective time management including building of appropriate
+	time frames for activities and assignments & & Rating: 4 \\
+	& &\\
+	Dr.~Brugler is a bit behind in the weekly reading schedule stated in the syllabus (He is teaching this course for the first time and using new course materials, so this is understandable.) & & \\
+\end{tabular}
+\item 	\begin{tabular}[t]{p{0.6\textwidth} p{2cm} p{2cm} }
+Evidence of faculty engagement, interaction with students, timely feedback and ongoing assessment & & Rating: 5 \\
+& &\\
+Dr.~Brugler is eager to involve students in learning evolutionary biology. His questions are never dull (one of the elevator pitches questions was: ``Can religion and evolution coexist?") and his course materials are very up-to-date: this makes students eager to ask questions, and Dr.~Brugler's classroom demeanor makes the class inclusive and thought-provoking. Dr.~Brugler even has his cell phone number on the syllabus, with an invitation to his students to text or call. & & \\
+\end{tabular}
+\item 	\begin{tabular}[t]{p{0.6\textwidth} p{2cm} p{2cm} }
+	Evidence of student engagement and interaction & & Rating: 5 \\
+	& &\\
+	Students were engaged and excited! For example, two students had attended the optional visit to the American Museum of Natural History, and gave a short report to the class. One of the students in particular was struck by having seen scientists who, in his words, cared about science as if their life depended on it. Dr.~Brugler tells the students that science is ``amazing and awesome", and his enthusiasm for teaching this class is indeed amazing and awesome & &\\
+\end{tabular}
+\item 	\begin{tabular}[t]{p{0.6\textwidth} p{2cm} p{2cm} }
+	Encouragement of critical and analytical thinking & & Rating: 5\\
+	& &\\
+	Dr.~Brugler places a heavy emphasis on critical analysis of information. One of the many examples that I observed was the  "basic tree thinking assessment" which students first reviewed at home and then discussed together in class. This exercise addressed common misconceptions in reading evolutionary trees.
+\end{tabular}
+%%%\item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+%%%	Clarity of navigation & & Rating: 
+%%%\end{tabular}
+%%%\item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+%%%	Effective use of platform functionalities for organizing and
+%%%	pacing the material of the course and the work of the students & & Rating: 
+%%%\end{tabular}
+\end{enumerate}
+%\begin{enumerate}[label=$\hdots$ {\bf  \alph*:}]
+\vskip 1cm
+{\large Additional comments}
+
+
+Here are some questions about the course materials that I discussed with Dr.~Brugler at our post observation meeting.
+\begin{enumerate}[label=\textcolor{blue}{\bf (\alph*)}]
+\item If you have already done a virtual lab, how did it work?
+\begin{adjustwidth}{1cm}{1cm}
+Dr.~Brugler has not done virtual labs in class yet, but plans to do them in the near future. He is thinking that the labs outlined in the syllabus (SimBio
+Virtual Labs) may be too complex, so he is considering using demonstrations from the PBS evolution series.
+\end{adjustwidth}
+\item How are the weekly forum posts going? How do you evaluate forum posts? Which of the four options for forum posts do students seem to prefer?
+\begin{adjustwidth}{1cm}{1cm}
+Podcasts are popular, and students have posted substantive comments in the forums. 
+\end{adjustwidth}
+\item How do you use anonymous polls to have students share points that were unclear?
+\begin{adjustwidth}{1cm}{1cm}
+Every week, students email Dr.~Brugler (anonymously, with \emph{PollsEverywhere}) points that do not find sufficiently clear, and Dr.~Brugler goes over them in the next class meeting. 
+\end{adjustwidth}
+\item When does a student receive feedback about her/his current events presentation or after leading a class discussion? How do you share the feedback with the student?
+\begin{adjustwidth}{1cm}{1cm}
+When a student presents, Dr.~Brugler takes notes on the grading rubric, then he emails the completed rubric to the student by the next class meeting.
+\end{adjustwidth}
+\item What is the most positive aspect of the course?
+\begin{adjustwidth}{1cm}{1cm}
+Students' engagement! Students are very lively in class, and a couple of students have taken advantage of out-of-class optional activities: two students attended the museum visit, another visit is being schedule (on a Sunday afternoon, at students' request), and a student has attended a presentation by Prof.~Carroll.
+\end{adjustwidth}
+	\end{enumerate}
+
+%\vskip 5cm %comment out
+
+\vskip 1cm
+{\large Recomendations}
+%\vskip 5cm %comment out
+
+\begin{itemize}
+	\item Rework the schedule of readings from Zimmer's book. 
+	\begin{adjustwidth}{1cm}{1cm}
+	In the post-observation meeting, we discussed how many students had heard of the scientific terms and concepts that are at the heart of the course, but did not know what they meant (for example, DNA). Dr.~Brugler will include an overview of background material in his lectures from Zimmer's book.
+	\end{adjustwidth}
+	\item Consider implementing a more stringent time management for class activities (this seemed to be part of the feedback that students gave in the midterm evaluations.) 
+	\item Each week, a student leads a class discussion on a chapter from Carroll's book. We discussed asking the class to read the chapter ahead of time and email questions to the presenter in advance. 
+	\item Keep giving weekly quizzes. The material builds up week by week, so weekly quizzes are a great way to make sure that students have a command of the science terminology and main concepts. As discussed in the post-observation meeting, students are doing pretty well in the quizzes, and the class is progressing well, so the quizzes are a valuable asset.
+	
+	
+	
+\end{itemize}
+\vskip 1cm
+{\large Observer's evaluation of the class}
+
+%CHANGE AS APPROPRIATE
+
+{\tabulinesep=1.2mm
+	\begin{tabu}{c  c c c c  }
+		
+		{\fbox{5 = Excellent}}   & 4 =Very Good & 3 = Good & 2 = Fair & 1 = Poor   \\ 	
+	\end{tabu}}
+
+\end{document}                 

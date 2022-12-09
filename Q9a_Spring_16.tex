@@ -1,0 +1,133 @@
+\documentclass[11pt,answers]{exam}
+
+
+%\usepackage[margin=0.4in,footskip=0.2in,]{geometry}
+\usepackage[a4paper,bindingoffset=0.2in,%
+            left=0.2in,right=0.2in,top=0.6in,bottom=0.2in,%
+            footskip=.2in]{geometry}
+
+\usepackage{etex}
+\usepackage{amssymb,amsmath,multicol} %<-- InWorksheetExam1 i also have fancyhdr,
+
+\usepackage[metapost]{mfpic}
+\usepackage[pdftex]{graphicx}
+
+\usepackage{pst-plot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\usepackage{tikz}
+\usepackage{tkz-2d}
+\usepackage{tkz-base}
+\usetikzlibrary{calc}
+
+\usepackage{tabularx, booktabs}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\usepackage[inline]{enumitem}
+\usepackage{refcount}%<-- non in WorksheetExam1
+
+\usepackage{pstricks-add,pst-eucl}
+\usepackage{caption}
+
+
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.50}\normalsize
+
+\def\f{x+1} \def\g{-x/3+2}  \def\h{-x+3}
+
+\newcommand{\vasymptote}[2][]{
+	\draw [densely dashed,#1] ({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});
+}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{%
+		\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+\renewcommand\choicelabel{\circled{\thechoice}}
+
+
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+
+\addpoints
+%\printanswers
+\noprintanswers
+
+%%\usepackage{geometry}
+%%\geometry{
+	%a4paper,
+	%total={170mm,257mm},
+	%left=20mm,
+	%top=20mm,
+%%	text={.95\paperwidth,.95\paperheight}, ratio=1:3,%includefoot
+%%}
+
+\opengraphsfile{Q9a_Spring_16}
+
+\begin{document}
+%\extrawidth{-0.3in}
+\pagestyle{headandfoot}
+
+%\setlength{\hoffset}{-.25in}
+
+%\extraheadheight{-.3in}
+\runningheadrule
+\firstpageheader{\bfseries {MATH1-UC 1171}}{ \bfseries {Quiz 9 }}{\bfseries {4/12/2016}} 
+
+
+
+\firstpagefooter{} %%&&CHANGED
+                {}
+                {Points earned: \hbox to 0.5in{\hrulefill}
+                 out of  \pointsonpage{\thepage} points}
+                 
+						
+
+%\vspace*{0.1cm}
+\hbox to \textwidth { \scshape {Name:} \enspace\hrulefill}
+\vspace{0.1in}
+
+
+
+
+\pointpoints{point}{points}
+
+%\def\baselinestretch{1}\selectfont
+%\doublespacing
+\begin{questions}
+
+
+\addpoints
+
+\question[2] The equation 
+$\displaystyle N(t) = \frac{700}{1 + 69e^{−0.6t}}$
+models the number of people $N$ in a town who have heard a rumor after $t$ days. 
+
+How many people started the rumor? Show your work step by step.
+\fillwithdottedlines{2cm}
+\question If an initial principal $P$ is invested at an annual rate r and the interest is compounded $n$ times per year, the amount $A$ 
+in the account $t$ years after May 31, 2009 is
+$\displaystyle A(t) = P\left(1 + \frac{r}{n}\right )^{nt}$.
+On May 31, 2009, the Annual Percentage Rate listed at Jeff's bank for regular savings accounts was 0.24\% compounded monthly, and Jeff invests \$4000.
+\begin{parts}
+	\part[1] Write the formula for $A(t)$. \dotfill
+	\part[2] \label{part:odifreddi} Solve the equation $A(t)=6000$ for $t$. (Your answer will be a fraction.)
+	\fillwithdottedlines{3cm}
+	\bonuspart[1] What does your answer in part~(\ref{part:odifreddi}) represent in practical terms?
+	\fillwithdottedlines{1cm}
+	\end{parts}
+
+\question The population of Burkina Faso is about 18.9 million and grows at a rate of 3.03\% per year. The population of Canada is approximately 35 millions, and grows at a rate of 0.75\% per year. (The size of Burkina Faso is 105,869 square  miles, and the size of Canada is 3,854,085 square miles.) 
+\begin{parts}
+	\part[2] \label{part:perfetto} Write an equation that allows you to find when the population of Burkina Faso and the population of Canada are equal. \dotfill
+	\bonuspart[2] Solve the equation in part (\ref{part:perfetto}).
+	\fillwithdottedlines{2cm}
+\end{parts}
+%%%%%%%%%%%%%%%%%%%%%%
+\question[2] Solve the equation $\displaystyle \log(x)+\log(10x)=10$.
+\fillwithdottedlines{3cm}
+
+\end{questions}
+
+\end{document}                 

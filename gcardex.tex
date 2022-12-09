@@ -1,0 +1,81 @@
+% greeting card document using gcard package, showing basic techniques of size 
+% selection and horizontal and vertical placement of text
+
+% For landscape orientation, include ``landscape'' as a global
+% option, and call the geometry package explicitly to specify your
+% output driver.  This example assumes dvips.  (The explicit \usepackage{geometry}
+% is unnecessary with pdftex, and in fact pdftex will even ignore other driver
+% specifications.)
+
+% G. C. McBane  19 May 2007
+
+\documentclass[12 pt,landscape]{article}
+\usepackage{palatino}
+\usepackage[dvips]{geometry}
+\usepackage{gcard}
+ \usepackage{fontenc}
+ \usepackage{textcomp}
+
+\usepackage{shapepar}
+\usepackage{xcolor}
+
+\usepackage{frcursive}
+\usepackage[T1]{fontenc}
+%\newcommand{\setfont}[2]{{\fontfamily{#1}\selectfont #2}}
+\newenvironment{myfont}{\fontfamily{frc}\selectfont}{\par}
+
+% user should set next four lengths to taste; defined for a single panel
+% after folding.  All four panels use the same margins.
+% Here, edge and gutter are set the same, as are top and bottom; that's
+% not required, and it's okay to use 4 different values.
+\setlength{\gcguttermargin}{8 mm} % inside edge of textblock  
+\setlength{\gcedgemargin}{\gcguttermargin}  % outside edge
+\setlength{\gctopmargin}{6 mm}        % top
+\setlength{\gcbottommargin}{\gctopmargin}  % bottom
+
+
+\begin{document}
+
+\begin{frontcover}
+\centering 
+\huge
+\textit{To Flavia\ldots}
+\end{frontcover}
+
+
+% back cover; pushed down to 0.5 cm above bottom margin
+\begin{backcover}
+\centering
+\small
+%THIS SPACE INTENTIONALLY LEFT BLANK
+\textcolor{red}{\heartpar{Tieni ben stretto tutto il tuo tempo. Dipenderai meno dal domani, se saprai dominare l'oggi. Mentre la si differisce, la vita trascorre. Tutto è altrui, solo il tempo è nostro. La natura ci ha affidato il possesso di quest'unico bene, fugace e inafferrabile, da cui ci può espellere chiunque. Tanta è la loro stoltezza che mentre gli uomini accettano di essere responsabili di cose loro affidate, siano pure vilissime e sicuramente sostituibili con altre, nessuno si ritiene debitore per aver ricevuto del tempo, mentre è l'unica cosa che non si può restituire, per quanto riconoscenti. (Seneca)}}
+\end{backcover}
+                                
+% inside left
+\begin{insideleft}
+\centering
+\small
+%THIS SPACE INTENTIONALLY LEFT BLANK
+\textcolor{red}{\heartpar{Your children are not your children. 
+They are the sons and daughters of Life's longing for itself. 
+They come through you but not from you, 
+And though they are with you, yet they belong not to you. 
+You may give them your love but not your thoughts. 
+For they have their own thoughts. 
+You may house their bodies but not their souls, 
+For their souls dwell in the house of tomorrow, which you cannot visit, not even in your dreams. 
+You may strive to be like them, but seek not to make them like you. 
+For life goes not backward nor tarries with yesterday. 
+You are the bows from which your children as living arrows are sent forth... (Kahlil Gibran)}}
+\end{insideleft}
+
+% inside right
+\begin{insideright}
+ \begin{center} % same effect as \centering used for front cover
+\Huge
+\textit{On your last day\\
+of high school}
+ \end{center}
+\end{insideright}
+
+\end{document}

@@ -1,0 +1,345 @@
+\documentclass[12pt,dvipsnames]{article}
+\usepackage[margin=0.4in,footskip=0.1in]{geometry}
+\usepackage{etex}
+\usepackage{amssymb,amsmath,multicol} %<-- InWorksheetExam1 i also have fancyhdr,
+\usepackage{hyperref}
+\usepackage[metapost]{mfpic}
+\usepackage[pdftex]{graphicx}
+\usepackage{csquotes}
+\usepackage{pst-plot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\usepackage[linewidth=1pt]{mdframed}
+
+\usepackage{tikz}
+\usepackage{tkz-2d}
+\usepackage{tkz-base}
+\usetikzlibrary{calc}
+\usepackage{color}
+\usepackage[inline]{enumitem}
+\usepackage{refcount}%<-- non in WorksheetExam1
+
+\usepackage[linewidth=1pt]{mdframed}
+
+\usepackage{caption}
+\usetikzlibrary{calc,fit,intersections,shapes,calc}
+\usetikzlibrary{backgrounds}
+
+\usepackage{caption}
+
+
+
+%%These three lines are for the typewriter font. Comment them out if I don't want the font.
+%%%%%%\renewcommand*\ttdefault{lcmtt}
+%%%%%%\renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
+%%%%%%\usepackage[T1]{fontenc}
+%%%%%%
+
+\usepackage{tabularx, booktabs}
+%\usepackage{threeparttable,booktabs,array,showframe}
+
+
+\newenvironment{myitemize}
+{ \begin{itemize}
+		\setlength{\itemsep}{10pt}
+		\setlength{\parskip}{10pt}
+		\setlength{\parsep}{10pt}     }
+	{ \end{itemize}   
+	
+           } 
+
+\usepackage{setspace}
+
+\font\maxi=cminch scaled 100
+\usepackage{tgadventor}
+%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+\newcommand*{\myfont}{\fontfamily{\sfdefault}\selectfont}
+\usepackage{pacioli}
+\usepackage[OT1]{fontenc}
+
+
+%\usepackage{AlegreyaSans} %% Option 'black' gives heavier bold face
+%% The 'sfdefault' option to make the base font sans serif
+%\renewcommand*\oldstylenums[1]{{\AlegreyaSansOsF #1}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{%
+		\node[shape=circle,fill=blue!20,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{%
+		\node[shape=rectangle,fill=green!20,draw,inner sep=2pt] (char) {#1};}}
+
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\newcommand\T{\rule{0pt}{2.6ex}}       % Top strut
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}} % Bottom strut
+
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+
+\rfoot{{\small{Page \thepage\ of \pageref{LastPage}}}}
+\cfoot{}
+\renewcommand{\baselinestretch}{1.50}\normalsize
+
+%\opengraphsfile{Wk14_Questions_Spring_16}
+
+\begin{document}
+	
+%\begin{mdframed}
+        \begin{table}
+       	\footnotesize
+\caption*{McGhee Intensive Math Workshop Responses}
+	% \begin{table}
+	%	\centering
+		\begin{tabular}{|c|c|}
+			%\hline
+			\multicolumn{2}{c}{\bfseries August 2014 RSVP}\\\hline
+			First Name & Last Name\\ 
+			\hline
+			KAREN  & ADAMS\\ 
+\hline
+Carol  & Commissiong\\ 
+\hline
+Amanda  & Crews\\ 
+\hline
+Irene  & Cruz\\ 
+\hline
+James  & Dalley\\ 
+\hline
+Vidya  & Deepak\\ 
+\hline
+Noemi E.  & DeJesus\\ 
+\hline
+Stephany  & Deleon\\ 
+\hline
+ayana  & deurieux\\ 
+\hline
+Krystal & Dubose\\ 
+\hline
+Jessica & Ebeling\\ 
+\hline
+Tyler  & Evans\\ 
+\hline
+Claudia  & Gines\\ 
+\hline
+JANESSA  & HARVIN\\ 
+\hline
+Camelia & Hosu\\ 
+\hline
+Miko  & Jeffries\\ 
+\hline
+Yuri & Kuno\\ 
+\hline
+Adrienne  & Lalla\\ 
+\hline
+Max  & Loughman\\ 
+\hline
+Tashara  & Mason\\ 
+\hline
+aniutka  & olavarria\\ 
+\hline
+Renee  & Palkovsky\\ 
+\hline
+Omar  & Tavarez\\ 
+\hline
+Sonja  & Thomas\\ 
+\hline
+Dominic  & Toth\\ 
+\hline
+SPIRIDOULA & TSIALOKOSTAS\\ 
+\hline
+Rangika  & Warnakulasuriya\\ 
+\hline
+Gabrielle  & Wuhl\\ 
+			\hline\end{tabular}
+		%\label{table:table}
+		%\caption{\small{August 2016 RSVPs}} 
+%	\end{table}
+ \hfill
+%\begin{table}
+%	\centering
+	\begin{tabular}{|c|c|}
+			%\hline
+			\multicolumn{2}{c}{\bfseries January 2014 RSVP}\\\hline
+		First Name & Last Name\\ 
+		%\hline
+		\hline
+		Dea & Allen\\ 
+\hline
+Pablo & Amaya\\ 
+\hline
+Danielle & Cautela\\ 
+\hline
+Claudine  & Chappell\\ 
+\hline
+Isgeli & Chavez\\ 
+\hline
+Hillivie & Chollete-Smith\\ 
+\hline
+Cathy & Cromwell-Watson\\ 
+\hline
+Noemi E.  & DeJesus\\ 
+\hline
+Franklin & Diaz\\ 
+\hline
+Tyler  & Evans\\ 
+\hline
+Jazyl & Garcia\\ 
+\hline
+Daniel  & Gazineu\\ 
+\hline
+Menelik  & Goodwin\\ 
+\hline
+Ana & Holguin\\ 
+\hline
+Stephanie & Keane\\ 
+\hline
+Leana & Lorenzana\\ 
+\hline
+Kalindi & Mangeshikar\\ 
+\hline
+Elias & Mendino\\ 
+\hline
+Djordje & Miljkovic\\ 
+\hline
+Mahalia & Nurse\\ 
+\hline
+Ano  & Okera\\ 
+\hline
+Andrew  & Palka\\ 
+\hline
+Arlene & Roberts\\ 
+\hline
+Nancy & Rodriguez\\ 
+\hline
+Alanah & Roy\\ 
+\hline
+Anthony & Russo\\ 
+\hline
+Matthew  & Ryan\\ 
+\hline
+Shatia & Strother\\ 
+\hline
+Gwendy & Tan\\ 
+\hline
+Anthony  & Trapani\\ 
+\hline
+John & Waren\\  
+		\hline\end{tabular}
+%	\label{table:table}
+%	\caption{\small{January 2016 RSVPs}} 
+%\end{table}
+ \hfill
+% %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%\begin{table}
+%	
+\end{table}
+%\end{mdframed}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+
+        \begin{table}
+        	\footnotesize
+        	\caption*{McGhee Intensive Math Workshop Attendance}
+
+% \begin{table}
+% 	\centering
+ 	\begin{tabular}{|c|c|}
+ 		%\hline
+ 		\multicolumn{2}{c}{\bfseries August 2014 Attendance}\\\hline
+ 		First Name & Last Name\\ 
+ 		\hline
+ 		Karen & Adams\\ 
+\hline
+Irene & Cruz\\ 
+\hline
+James & Dalley\\ 
+\hline
+Stephany & Deleon\\ 
+\hline
+Judya  & Deopak\\ 
+\hline
+ayana  & deurieux\\ 
+\hline
+Camelia  & Hosu\\ 
+\hline
+Miko & Jeffries\\ 
+\hline
+Yuri & Kuno\\ 
+\hline
+Max & Loughman\\ 
+\hline
+Claudia  & Solis\\ 
+\hline
+Sonja & Thomas\\ 
+\hline
+Gabrielle  & Wuhl\\ 
+\hline
+Francesca & \\  
+ 		%\hline
+ 		\hline\end{tabular}
+ 	%\label{table:table}
+ %	\caption{\small{August 2016 Attendance}} 
+ %\end{table}
+ \hfill
+ 	\begin{tabular}{|c|c|}
+ 	 		%\hline
+ 	 		\multicolumn{2}{c}{\bfseries January 2014 Attendance}\\\hline
+ 		First Name & Last Name\\ 
+ 		\hline
+ 		Pablo & Amaya\\ 
+\hline
+Danielle & Cautela\\ 
+\hline
+Claudine  & Chappell\\ 
+\hline
+Cathy & Cromwell-Watson\\ 
+\hline
+Franklin & Diaz\\ 
+\hline
+Tyler  & Evans\\ 
+\hline
+Menelik  & Goodwin\\ 
+\hline
+Stephanie & Keane\\ 
+\hline
+Djordje & Miljkovic\\ 
+\hline
+Mahalia & Nurse\\ 
+\hline
+Ano  & Okera\\ 
+\hline
+Andrew  & Palka\\ 
+\hline
+Arlene & Roberts\\ 
+\hline
+Nancy & Rodriguez\\ 
+\hline
+Alanah & Roy\\ 
+\hline
+Matthew  & Ryan\\ 
+\hline
+Gwendy & Tan\\ 
+\hline
+Anthony  & Trapani\\ 
+\hline
+John & Waren\\ 
+ 		%\hline
+ 		\hline\end{tabular}
+ \hfill
+
+ 
+ \end{table}
+ 
+ 
+
+
+\end{document} 
+              

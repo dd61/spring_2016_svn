@@ -1,0 +1,118 @@
+\documentclass[12pt,answers]{exam}
+
+
+\usepackage[margin=0.8in,footskip=0.2in]{geometry}
+
+\usepackage{etex}
+\usepackage{amssymb,amsmath,multicol} %<-- InWorksheetExam1 i also have fancyhdr,
+
+\usepackage[metapost]{mfpic}
+\usepackage[pdftex]{graphicx}
+
+\usepackage{pst-plot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\usepackage{tikz}
+\usepackage{tkz-2d}
+\usepackage{tkz-base}
+\usetikzlibrary{calc}
+
+\usepackage{tabularx, booktabs}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\usepackage[inline]{enumitem}
+\usepackage{refcount}%<-- non in WorksheetExam1
+
+\usepackage{pstricks-add,pst-eucl}
+\usepackage{caption}
+
+\def\f{x+1} \def\g{-x/3+2}  \def\h{-x+3}
+
+\newcommand{\vasymptote}[2][]{
+	\draw [densely dashed,#1] ({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});
+}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{%
+		\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+\renewcommand\choicelabel{\circled{\thechoice}}
+
+
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+
+\addpoints
+%\printanswers
+\noprintanswers
+
+\usepackage{geometry}
+\geometry{
+	%a4paper,
+	%total={170mm,257mm},
+	%left=20mm,
+	%top=20mm,
+	text={.95\paperwidth,.95\paperheight}, ratio=1:3,%includefoot
+}
+
+\opengraphsfile{Q10a_Spring_16}
+
+\begin{document}
+%\extrawidth{-0.3in}
+\pagestyle{headandfoot}
+
+%\setlength{\hoffset}{-.25in}
+
+%\extraheadheight{-.3in}
+\runningheadrule
+\firstpageheader{\bfseries {MATH1-UC 1171}}{ \bfseries {Quiz 10 }}{\bfseries {4/19/2016}} 
+
+
+
+\firstpagefooter{} %%&&CHANGED
+                {}
+                {Points earned: \hbox to 0.5in{\hrulefill}
+                 out of  \pointsonpage{\thepage} points}
+                 
+						
+
+%\vspace*{0.1cm}
+\hbox to \textwidth { \scshape {Name:} \enspace\hrulefill}
+\vspace{0.1in}
+
+
+
+
+\pointpoints{point}{points}
+
+\begin{questions}
+
+
+\addpoints
+
+\question The population of a certain city was 110,000 in 2006, and the observed doubling time for the population is 17 years.
+\begin{parts}
+\part[2] Find an exponential model 
+$\displaystyle n(t) = n_02^{\frac{t}{a}}$
+ for the population $t$ years after 2006. (Show your work step-by-step.)
+\fillwithdottedlines{2.5cm}
+\part[2] Another was to write the formula for the population $n(t)$ is by using the exponential function with base $e$. The formula is $\displaystyle n(t)=n_0 e^{rt}$. Find $r$. (Show your work step-by-step and do not simplify your answer.)
+\fillwithdottedlines{2.5cm}
+\end{parts}
+\question[2] The half-life of radium-226 is 1600 years. Suppose we have a 28-mg sample.
+Find a function 
+$\displaystyle m(t) = m_02^{-\frac{t}{h}}$
+ that models the mass remaining after $t$ years. (Show your work step-by-step.)
+ \fillwithdottedlines{2.5cm}
+ \question[2] A patient takes a medicine that has a half-life of 2 hours (that is, it takes 2 hours for concentration of the medicine in the patient's system to drop by 50\%.) An overdose occurs when the patient has a  concentration of 190mg/l (milligrams per liters of blood) of medicine in her system. Every time the patient takes a pill containing this medicine, the concentration of the medicine in the patient's system increases by 100mg/l.
+
+At 1 pm, the patient has just taken the first dosage of the medicine, so she has a concentration of 100mg/l of medicine in her system. She takes the same amount of medicine every two hours. When will she overdose? Explain your reasoning and show your work step-by-step. 
+\fillwithdottedlines{4cm}
+
+	
+%%%%%%%%%%%%%%%%%%%%%%
+
+\end{questions}
+
+\end{document}                 

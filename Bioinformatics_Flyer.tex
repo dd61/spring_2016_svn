@@ -1,0 +1,68 @@
+\documentclass[a4paper]{article}
+\usepackage[addmargin]{stubs}
+\usepackage{miscdoc,url,booktabs,microtype,hyperref}
+\usepackage{graphicx}
+%%%%\usepackage{background}
+%%%%\backgroundsetup{
+%%%%scale=1,
+%%%%angle=0,
+%%%%opacity=.4,  %% adjust
+%%%%contents={\includegraphics[width=\paperwidth,height=\paperheight]{Bioinfocloud1}}
+%%%%}
+\usepackage{tikz}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{trees}
+\usetikzlibrary{calc}
+\usepackage{pdflscape}
+
+\def\nbrcircles {377}
+\def\outerradius {30mm}
+\def\deviation {.9}
+\def\fudge {.62}
+
+\newcounter{cumulArea}
+\setcounter{cumulArea}{0}
+
+\usepackage{tabularx}
+
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\font\maxi=cminch scaled 300
+
+\usepackage{tgadventor}
+%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+\newcommand*{\myfont}{\fontfamily{\sfdefault}\selectfont}
+\usepackage{pacioli}
+\usepackage[OT1]{fontenc}
+\newcommand*{\myfont1}{\fontfamily{\cpcfamily}\selectfont}
+\begin{document}
+\thispagestyle{empty}
+
+
+\begin{center}
+\begingroup
+  \myfont {\Huge {Introduction to Bioinformatics}}
+\endgroup
+\end{center}
+
+
+\Huge\raggedright\centering\color{blue}%
+%\includegraphics[scale=1.1,width=25cm,height=5cm,keepaspectratio]{nyu-scps-logo-lg}
+SCNC1-UC 3290 \\[5pt]\hrule\vspace*{5pt} 
+Special Topics Course\\[5pt]\hrule\vspace*{5pt} 
+\maxi {Introduction to Bioinformatics}\par\vspace{8pt}\hrule height3pt
+\par\vspace{1cm}
+
+
+
+
+%%%\stubs[10]{4cm}[]{{{\tt Bioinformatics} course}\\Prof. C. Noutsos\\ \href{mailto:cn34s@nyu.edu}{cn34@nyu.edu}}
+
+
+\end{document}

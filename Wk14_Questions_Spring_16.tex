@@ -1,0 +1,176 @@
+\documentclass[12pt,dvipsnames]{article}
+\usepackage[margin=0.4in,footskip=0.1in]{geometry}
+\usepackage{etex}
+\usepackage{amssymb,amsmath,multicol} %<-- InWorksheetExam1 i also have fancyhdr,
+\usepackage{hyperref}
+\usepackage[metapost]{mfpic}
+\usepackage[pdftex]{graphicx}
+\usepackage{csquotes}
+\usepackage{pst-plot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\usepackage{tikz}
+\usepackage{tkz-2d}
+\usepackage{tkz-base}
+\usetikzlibrary{calc}
+\usepackage{color}
+\usepackage[inline]{enumitem}
+\usepackage{refcount}%<-- non in WorksheetExam1
+
+\usepackage[linewidth=1pt]{mdframed}
+
+\usepackage{caption}
+\usetikzlibrary{calc,fit,intersections,shapes,calc}
+\usetikzlibrary{backgrounds}
+
+
+
+%%These three lines are for the typewriter font. Comment them out if I don't want the font.
+%%%%%%\renewcommand*\ttdefault{lcmtt}
+%%%%%%\renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
+%%%%%%\usepackage[T1]{fontenc}
+%%%%%%
+
+\usepackage{tabularx, booktabs}
+
+
+\newenvironment{myitemize}
+{ \begin{itemize}
+		\setlength{\itemsep}{10pt}
+		\setlength{\parskip}{10pt}
+		\setlength{\parsep}{10pt}     }
+	{ \end{itemize}   
+	
+           } 
+
+\usepackage{setspace}
+
+\font\maxi=cminch scaled 100
+\usepackage{tgadventor}
+%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+\newcommand*{\myfont}{\fontfamily{\sfdefault}\selectfont}
+\usepackage{pacioli}
+\usepackage[OT1]{fontenc}
+
+
+\usepackage{AlegreyaSans} %% Option 'black' gives heavier bold face
+%% The 'sfdefault' option to make the base font sans serif
+%\renewcommand*\oldstylenums[1]{{\AlegreyaSansOsF #1}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{%
+		\node[shape=circle,fill=blue!20,draw,inner sep=2pt] (char) {#1};}}
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+
+\rfoot{{\small{Page \thepage\ of \pageref{LastPage}}}}
+\cfoot{}
+\renewcommand{\baselinestretch}{1.50}\normalsize
+
+\opengraphsfile{Wk14_Questions_Spring_16}
+
+\begin{document}
+%\thispagestyle{empty}
+
+	\begingroup
+	\normalfont\AlegreyaSans
+	\textcolor{blue}
+	{
+	By Tuesday (May 3) class you should have: (1) reviewed these questions and (2) prepared a sheet of formulas and examples that you may include in your note-card. You may not have the final version of your note-card yet, however, it is important that before the review on May 3 you have summarized the main points that the exam will cover. 
+}
+	\endgroup
+
+\begin{center}
+	%\section*{Pacioli}
+	%\subsection*{\textbackslash cpcfamily}
+	\begingroup
+	\normalfont\cpcfamily
+	\maxi {FUNDAMENTALS OF FUNCTIONS}
+	\endgroup
+\end{center}
+\begin{enumerate}[label=\protect\circled{\arabic*}]
+	\item What is a function? What are the domain and range? How do we test if a graph represents a function? How do we test if a function has an inverse?
+	\item Can you graph a function that passes the vertical line test but not the horizontal line test?
+		\item Can you graph a function that passes the horizontal line test but not the vertical line test?
+		\item Is the unit circle a function?
+		\item How are the various transformations (horizontal and vertical shifts, horizontal and vertical stretches, reflections about the axes) encoded in formulas is we start with an exponential function, a logarithmic function, or sine and cosine?
+\end{enumerate}
+\begin{center}
+	%\section*{Pacioli}
+	%\subsection*{\textbackslash cpcfamily}
+	\begingroup
+	\normalfont\cpcfamily
+	\maxi {EXPONENTIAL AND LOGARITHMIC FUNCTIONS}
+	\endgroup
+\end{center}
+	
+\begin{enumerate}[label=\protect\circled{\arabic*},resume]
+	\item What are the domain and range of $\displaystyle f(x)=a^x$? Can $a$ be any (fixed) number?
+	\item How does the graph of an exponential function $\displaystyle f(x)=a^x$ (with $a>1$) differ from the graph of an exponential function $\displaystyle f(x)=b^x$ (with $0<b<1$)?
+	\item What is the equation of the horizontal asymptote of $\displaystyle f(x)=a^x$?
+	\item What do half life and doubling time mean?
+	\item What are the domain and range of $\displaystyle g(x)=\log_a x$? 
+	\item What are the domain and range of $\displaystyle g(x)=5\log_2 (3-4x)$? What is the equation of the vertical asymptote?
+	\item Solve the equations:
+	\begin{enumerate}
+		\item $\displaystyle \log \left (x^2\right ) = 0$
+		\item $\displaystyle \log x+ \log (x+1) = 1$
+		\item $\displaystyle \log (x^2-1) = 10$
+		\item $\displaystyle \log (x+3) -\log(1-x)=\log(6)$
+		\item $\displaystyle 10^{x^2-1} = 2$
+	\end{enumerate}
+
+\end{enumerate}		
+	
+
+
+\begin{center}
+	%\section*{Pacioli}
+	%\subsection*{\textbackslash cpcfamily}
+	\begingroup
+	\normalfont\cpcfamily
+	\maxi {COMPOUND INTEREST AND APPLICATIONS}
+	\endgroup
+	
+\end{center}
+
+\begin{enumerate}[label=\protect\circled{\arabic*},resume]
+	\item How much do I need to invest now, at a yearly interest rate of 1.5\% compounded quarterly, if I want to have \$200,000 in my account 5 years from now?
+\item The formula for the amount in an account after $t$ years (if the yearly interest rate is $r\%$ and the compounding happens $n$ times a year) is $\displaystyle P(t)=P_0\left (1+\frac{r}{n}\right ) ^{nt}$ (you should know this formula or copy it in your note-cards. Note that in the formula $r$ is written in decimal form, so for example if the yearly interest rate is 1\%, you will use 0.01 for $r$.) If $P_0,r,t$ don't change, and $n$ becomes larger and larger, does $P(t)$ grow without bound, or does it get closer and closer to a number?
+\item I invest \$1000 at a yearly interest rate of 1\% compounded monthly. I also invest \$1200 at a yearly interest rate of 0.1\% compounded yearly. When will the two investments be equal? (Set up an equation and find the exact value for the number of years.)
+\item I invest \$1000 at a yearly interest rate of 1\% compounded monthly. In how many years will the amount in the account be \$1100?
+	\item A yam has been taken out of an oven and left on a counter at room temperature. The temperature of the yam is $x$ (in degrees Fahrenheit) and the time it takes the yam to reach a temperature of $x$ degrees is $\displaystyle T(x)=745-157\ln\left ( x-60 \right)$ (in minutes). 
+	\begin{enumerate}
+		\item What is the initial temperature of the yam, that is, the temperature right after it is taken out of the oven?
+		\item What is the room temperature?
+		\item List all the transformations, in order, that you need to apply to the graph of the function $\displaystyle f(x) =157\ln x$ in order to get the graph of the function $\displaystyle T(x)$.
+		\item Write a formula for the temperature $x$ of the yam as a function of the time $T$. (Your formula will be: $x=\ldots$)
+	\end{enumerate}
+	\item A quantity decreases by 20\% every 4 hours. What is its half life?
+	\item A quantity increases by 20\% every 4 hours. What is its doubling time?
+\end{enumerate}
+
+\begin{center}
+	%\section*{Pacioli}
+	%\subsection*{\textbackslash cpcfamily}
+	\begingroup
+	\normalfont\cpcfamily
+	\maxi {TRIGONOMETRY}
+	\endgroup
+	
+\end{center}
+
+\begin{enumerate}[label=\protect\circled{\arabic*},resume]
+	\item Why don't $\displaystyle y=\sin(x)$ and $\displaystyle y=\cos(x)$ have an inverse?
+	\item What are the domain and range of $\displaystyle y=\sin^{-1}(x)$ and $\displaystyle y=\cos^{-1}(x)$?
+	\item Which part(s) of the unit circle should you use to find values of  $\displaystyle\sin^{-1}(x)$ and $\displaystyle \cos^{-1}(x)$?
+	\item Why is this statement false? $\displaystyle \frac{7\pi}{4}=\sin^{-1}\left (-\frac{\sqrt{2}}{2}\right )$
+	\item What are the similarities and differences of the graphs of $\displaystyle y=\sin\left (2x\right)$ and $\displaystyle y=\sin\left (2\pi x\right)$?
+	\item What are the transformations of $\displaystyle y=\sin\left(x\right)$ that result in $\displaystyle y=\sin\left (2 x-\frac{\pi}{3}\right)$? Does the order in which these transformations are performed matter? Why or why not?
+	\end{enumerate}
+
+\end{document} 
+              

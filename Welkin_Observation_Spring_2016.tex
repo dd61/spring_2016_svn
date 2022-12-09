@@ -1,0 +1,263 @@
+\documentclass[11pt,dvipsnames]{article}
+
+\usepackage{etex}
+\usepackage{amssymb,amsmath,multicol} %<-- InWorksheetExam1 i also have fancyhdr,
+
+\usepackage[metapost]{mfpic}
+\usepackage[pdftex]{graphicx}
+
+\usepackage{pst-plot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\usepackage{tikz}
+\usepackage{tkz-2d}
+\usepackage{tkz-base}
+\usetikzlibrary{calc}
+\usepackage{color}
+\usepackage[inline]{enumitem}
+\usepackage{refcount}%<-- non in WorksheetExam1
+\usepackage{changepage}% http://ctan.org/pkg/changepage
+
+%%%%\usepackage[linewidth=1pt]{mdframed}
+
+%%%%\usepackage{caption}
+%\renewcommand{\headrulewidth}{0pt}
+
+%%These three lines are for the typewriter font. Comment them out if I don't want the font.
+%%%%%%\renewcommand*\ttdefault{lcmtt}
+%%%%%%\renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
+%%%%%%\usepackage[T1]{fontenc}
+%%%%%%
+
+\usepackage{tabularx, booktabs}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+
+
+%%%\usepackage{background}
+%%%\newsavebox\mybox
+%%%\savebox\mybox{\tikz[color=red!50,opacity=0.4]\node{Draft};}
+
+\newcommand{\vasymptote}[2][]{
+	\draw [densely dashed,#1] ({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});
+}
+
+\newcommand{\inlineitem}[1][]{%
+	\ifnum\enit@type=\tw@
+	{\descriptionlabel{#1}}
+	\hspace{\labelsep}%
+	\else
+	\ifnum\enit@type=\z@
+	\refstepcounter{\@listctr}\fi
+	\quad\@itemlabel\hspace{\labelsep}%
+	\fi}
+
+\usetikzlibrary{automata}
+
+\usepackage{hyperref}% http://ctan.org/pkg/hyperref
+
+\usepackage{geometry}
+\geometry{
+	%a4paper,
+	%total={170mm,257mm},
+	%left=20mm,
+	%top=20mm,
+	text={.8\paperwidth,.9\paperheight}, ratio=1:1,includefoot
+}
+
+
+\setlength{\parindent}{0pt} % disable paragraph indentation
+\newlength{\linesepskip}
+\setlength{\linesepskip}{2pt} % adjust to suit
+
+\newcommand*{\linesep}[1]{%
+	\par\nobreak
+	\vskip 3pt \leaders\vrule width #1\vskip 0.81pt
+	\nobreak
+}
+
+\usepackage{tabu}
+
+%%\backgroundsetup{angle=60,contents={\usebox\mybox}}
+\begin{document}
+	\begin{center}
+		{\Large Classroom Observation Report}
+	\end{center}
+\begin{minipage}{0.35\textwidth}
+		Brian M. Welkin \par
+		\linesep{\textwidth}
+		Instructor
+	\end{minipage}
+\hspace{0.2\textwidth}
+	\begin{minipage}{0.35\textwidth}
+			ISMM1-UC 728.001 \par
+			\linesep{\textwidth}
+			Course
+		\end{minipage}
+		
+\vskip 1cm
+		
+\begin{minipage}{0.35\textwidth}
+	Donatella Delfino \par
+	\linesep{\textwidth}
+	Observer
+\end{minipage}
+\hspace{0.2\textwidth}
+\begin{minipage}{0.35\textwidth}
+	03/07/2016 \par
+	\linesep{\textwidth}
+	Date of observation
+\end{minipage}
+
+\vskip 1cm
+
+\begin{minipage}{0.35\textwidth}
+	6 \par
+	\linesep{\textwidth}
+	\# of students present in the week
+\end{minipage}
+
+\vskip 1cm
+
+\begin{minipage}{0.35\textwidth}
+	6:10 pm \par
+	\linesep{\textwidth}
+	Observer's arrival time
+\end{minipage}
+\hspace{0.2\textwidth}
+\begin{minipage}{0.35\textwidth}
+	7:20 pm \par
+	\linesep{\textwidth}
+	Observer's departure time
+\end{minipage}
+
+\vskip 1cm
+{\large Observer}
+
+Comment on and rate each item below and add comments in space provided:
+\vskip 0.5cm
+
+%%\begin{minipage}{\linewidth}
+%%	\centering 
+%%	\begin{tabular}[t]{|c|c|c|c|c|p{3cm}|}
+%%		\hline
+%%		5 = Excellent    & 4 =Very Good & 3 = Good & 2 = Fair & 1 = Poor & NA = Not appropriate for this class  \\ \hline
+		
+%%	\end{tabular}
+%%\end{minipage}
+
+{\tabulinesep=1.2mm
+	\begin{tabu}{c  c c c c p{4cm} }
+		
+		5 = Excellent   & 4 =Very Good & 3 = Good & 2 = Fair & 1 = Poor & NA = Not appropriate for this class  \\ 	
+	\end{tabu}}
+\vskip 0.5cm
+
+\begin{enumerate}[label= {\bf  \arabic*:}]
+	\item
+	\begin{tabular}[t]{p{0.5\textwidth} p{3cm} p{2cm} }
+		Knowledge of subject & & Rating: 5 \\
+		& & \\
+		Brian is an experienced instructor, and his confidence and ease with the material were evident. & & \\
+	\end{tabular} 
+	
+	
+	\item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+		Clarity of learning objectives for the course as a whole and for the week's lesson within the course & & Rating: 5\\
+		&&\\
+		See attached pre-observation form. &&\\
+	\end{tabular} 
+	\item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+		Clarity of criteria for assessing student performance for all activities & & Rating: NA\\
+		& & \\
+		In the part of the class I observed, Brian went over a piece of code and took students' questions. There was not quiz or other graded activity that I could observe.&& \\
+		\end{tabular} 
+    \item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+	Selection of appropriate instructional materials and methods & & Rating: 5\\
+	& &\\
+	Brian reviewed a piece of code (a ball bouncing along the edges of a rectangle) that students had to complete as an assignment. He went over the code line by line, and showed the students how to tweak the code. & &\\
+\end{tabular} 
+\item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+	Effective time management including building of appropriate
+	time frames for activities and assignments & & Rating: 5\\
+	
+\end{tabular}
+\item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+Evidence of faculty engagement, interaction with students, timely feedback and ongoing assessment & & Rating: 5\\
+& &\\
+Students had many questions, which Brian answered extensively. The only point of improvement would be to use darker color markers when writing on the white board. The lights were dimmed and the faded  green markers made Brian's writing hard to read from the back of the room.&&\
+\end{tabular}
+\item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+	Evidence of student engagement and interaction & & Rating: 5\\
+	& &\\
+	Students were clearly engaged. The classroom was very warm, and each student was sitting behind a computer: the perfect scenario for students to tune out and surf. However, there was hardly any non-class related computer activity that I could observe (I was sitting in the back row, so I had a full view of all of the students' screens.) I couple of students checked their Facebook timeline  briefly, but for the large part students were looking at the code and asking follow-up questions.& & \\
+\end{tabular}
+\item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+	Encouragement of critical and analytical thinking & & Rating: 5\\
+\end{tabular}
+%%\item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+%%	Clarity of navigation & & Rating: 
+%%\end{tabular}
+%%\item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+%%	Effective use of platform functionalities for organizing and
+%%	pacing the material of the course and the work of the students & & Rating: 
+%%\end{tabular}
+\end{enumerate}
+%\begin{enumerate}[label=$\hdots$ {\bf  \alph*:}]
+\vskip 1cm
+{\large Additional comments}
+
+Here are the main points Brian and I discussed at the post-observation meeting.
+
+\begin{itemize}
+\item Is the class going as you expected it would at the beginning of the semester? Is there anything you would change in the class structure and pacing if you were to teach the class again?
+
+\begin{adjustwidth}{1cm}{1cm}
+Brian mentioned that students enjoyed the visuals (bouncing ball) much more than the prerequisite materials that he covered at the beginning of the course (these standard prerequisites are outlined in Brian's pre-observation form). If he had to revise the syllabus, he would introduce the visuals at the beginning of the course, and introduce the prerequisites as he continued developing the application.
+\end{adjustwidth}
+\item What is working particularly well in the class?
+\begin{adjustwidth}{1cm}{1cm}
+Definitely the interactive game. 
+\end{adjustwidth}
+\end{itemize}
+
+\vskip 1cm
+{\large Recomendations}
+
+None, the class seemed successful in its present format.
+
+\vskip 1cm
+{\large Observer's evaluation of the class}
+
+
+{\tabulinesep=1.2mm
+	\begin{tabu}{c  c c c c  }
+		
+		{\fbox{5 = Excellent}}   & 4 =Very Good & 3 = Good & 2 = Fair & 1 = Poor   \\ 	
+	\end{tabu}}
+
+\newpage
+
+\begin{center}
+		{{\Large {Pre-Observation Form}}\\
+\large Brian M. Welkin}
+	\end{center}
+	
+After covering various programming topics such as variables, loops, conditional statements, arrays and finally classes, we started using Gosu library to build window-based applications last week to practice more with classes, especially in a visual context so that students can understand OOP more easily by seeing the "Objects" and how they behave. 
+
+I introduced Gosu::Window, and Gosu:Image by creating a window application and loading a ball image into the window. In the class, we first made the ball move on x axis towards right, then made the ball bounce between left and right sides of the window. This practice introduced "flag variable" concept. Finally, we made the ball move around the 4 sides of the window. And this introduced "state variable" concept. These practices were also to give students opportunity to see and understand usage of instance variables and methods.
+
+The assignment for students this week is to make the ball move on both x and y axises and bounce at the 4 sides of the window.
+
+On Monday, I will first complete the assignment in the class while comparing students' assignment approaches to my solution. Once the assignment is completed, we will start turning this simple assignment into an interactive game. 
+
+We will add a paddle in the middle of the window which can be either controlled by the keyboard input or by the mouse location. This step shows students how to enable user interaction with the objects in the game. After the paddle starts to move, we will start discussing about collision detection: how to construct a logic statement to evaluate if two objects' rectangular boundaries are overlapping. The game will be completed when the ball starts bouncing after touching the paddle.
+
+The second part of the class, I will start a new project which generates some game objects at random intervals and also when a key is pressed. These objects will move at certain direction, and when they reach outside of the window they will be destroyed. All the objects will be stored in arrays. Generation, destruction and collision detection will involve some array operations. This will help students understand operations with arrays more.
+
+This practice will also enable students to do their upcoming assignment:  A simple game where a space ship (moving with arrow keys) fires bullets (when space key pressed) at (randomly generated) astroids.
+
+	
+
+\end{document}                 

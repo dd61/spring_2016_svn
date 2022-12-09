@@ -1,0 +1,122 @@
+\documentclass[11pt,dvipsnames]{article}
+
+\usepackage{etex}
+\usepackage{amssymb,amsmath,multicol} %<-- InWorksheetExam1 i also have fancyhdr,
+
+\usepackage[metapost]{mfpic}
+\usepackage[pdftex]{graphicx}
+
+\usepackage{pst-plot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\usepackage{tikz}
+\usepackage{tkz-2d}
+\usepackage{tkz-base}
+\usetikzlibrary{calc}
+\usepackage{color}
+\usepackage[inline]{enumitem}
+\usepackage{refcount}%<-- non in WorksheetExam1
+
+\usepackage[linewidth=1pt]{mdframed}
+
+\usepackage{caption}
+\usepackage{csquotes}
+
+\usepackage{frcursive}
+\usepackage[T1]{fontenc}
+%\newcommand{\setfont}[2]{{\fontfamily{#1}\selectfont #2}}
+\newenvironment{myfont}{\fontfamily{frc}\selectfont}{\par}
+%\renewcommand{\headrulewidth}{0pt}
+
+%%These three lines are for the typewriter font. Comment them out if I don't want the font.
+%%%%%%\renewcommand*\ttdefault{lcmtt}
+%%%%%%\renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
+%%%%%%\usepackage[T1]{fontenc}
+%%%%%%
+
+\usepackage{tabularx, booktabs}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\newcommand{\vasymptote}[2][]{
+	\draw [densely dashed,#1] ({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});
+}
+
+\newcommand{\inlineitem}[1][]{%
+	\ifnum\enit@type=\tw@
+	{\descriptionlabel{#1}}
+	\hspace{\labelsep}%
+	\else
+	\ifnum\enit@type=\z@
+	\refstepcounter{\@listctr}\fi
+	\quad\@itemlabel\hspace{\labelsep}%
+	\fi}
+
+\usetikzlibrary{automata}
+
+\usepackage{hyperref}% http://ctan.org/pkg/hyperref
+
+\usepackage{geometry}
+\geometry{
+	%a4paper,
+	%total={170mm,257mm},
+	%left=20mm,
+	%top=20mm,
+	text={.8\paperwidth,.9\paperheight}, ratio=1:1,includefoot
+}
+
+
+%\opengraphsfile{Wk5_Overview_Spring_16}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+\begin{myfont}
+{\Large To Flavia on June 10, 2016, your last day of high school }	
+\end{myfont}
+\end{center}
+
+
+You know, don't you, that you have shaped our life more than you can imagine. Here is what we would say, if we could write in your yearbook! 
+
+\begin{enumerate}[label= {$\heartsuit${\arabic*:}}]
+\item Thank you for laughing at our jokes;
+\item Thank you for remembering all birthdays, Mother's Days and Father's Days;
+\item Thank you for looking for a 4-cups Brikka in Italy;
+\item Thank you for tickling the nonno;
+\item Thank you for singing Abba songs during a scary landing (you were not scared!);
+\item Thank you for knowing that there are things called O.D.E.s and P.D.Es when you were in elementary school;
+\item Thank you for being fearless in asking questions about academics without thinking that you should hold back because people may think less of you;
+\item Thank you for giggling and being good humored;
+\item Thank you for the cool-headed advice you have given us many times;
+\item Thank you for sharing your perspective on things with us;
+\item Thank you for listening to us talking about Feynman, Grothendieck, \LaTeX,   our advisors and fellow students across three continents;
+\item Thank you for making many friends in school and outside of school;
+\item Thank you for saying that SKS is well dressed and that DD has developed a sense of style over the years;
+\item Thank you for not being afraid of aiming high;
+\item Thank you for Netflix, Instagram, Spotify, Fitness Blender and our smartphones;
+\item Thank you for dedicating most of your Saturdays during the last four school years to teaching at Go and to ballet;
+\item Thank you for thinking deeply, independently, fearlessly and logically, and for putting your questions into words;
+%\item Thank you for putting your questions into words;
+\item Thank you for Audre Lorde and James Baldwin;
+\item Thank you for taking the measurements of the kitchen in Ceriale;
+\item Thank you for riding an elephant and a horse;
+\item Thank you for not making excuses, and for questioning when people (including us) try to make excuses;
+%\item Thank you for introducing DD to Fitness Blender;
+\item Thank you for enjoying the stories about the tigre quant, Rosa and Bobettob;
+\item Thank you for your text messages and snapchats;
+\item Thank you for being conscious about food and nutrition...
+\item And above all, thank you for being in our lives. 
+
+
+
+
+
+\end{enumerate}
+\begin{center}
+\begin{myfont}
+Donatella Delfino \& S.K. Sinha
+\end{myfont}
+\end{center}
+
+\end{document}                 

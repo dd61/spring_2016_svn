@@ -1,0 +1,266 @@
+\documentclass[10pt,answers]{exam}
+%\usepackage{mystyleTest}
+\usepackage{etex}
+\usepackage{amssymb,amsmath,multicol} %<-- InWorksheetExam1 i also have fancyhdr,
+
+\usepackage{hyperref}
+
+
+\usepackage[metapost]{mfpic}
+\usepackage[pdftex]{graphicx}
+
+\usepackage{pst-plot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\usepackage{tikz}
+\usepackage{tkz-2d}
+\usepackage{tkz-base}
+\usetikzlibrary{calc}
+
+\usepackage[inline]{enumitem}
+\usepackage{refcount}%<-- non in WorksheetExam1
+\usepackage{subcaption}
+
+\usepackage{tabularx, booktabs}
+
+
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{%
+		\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+\renewcommand\choicelabel{\circled{\thechoice}}
+
+\CorrectChoiceEmphasis{\color{red}}
+
+
+\setlength\answerlinelength{2in}
+\addpoints
+%\printanswers
+\noprintanswers
+
+\begin{document}
+
+\extrawidth{-0.3in}
+\pagestyle{headandfoot}
+
+\setlength{\hoffset}{-.25in}
+
+\extraheadheight{-.4in}
+
+%%\pagestyle{headandfoot}
+\extraheadheight{-0.9cm}
+%%\runningheadrule
+%%\firstpageheader{\bfseries {}}{ \bfseries {NYU SPS}}{\bfseries {McGhee Division}} 
+
+\parbox[b]{1.75in}{%
+	\vspace{0.5in}%
+	\includegraphics[scale=0.7,ext=.png]
+	{nyu-scps-logo-lg.png}%
+}%
+
+
+\begin{center}
+	{\bfseries {Practice Problems \#1}}
+\end{center}
+\bigskip
+ 
+
+%\vspace*{0.2cm}
+%\hbox to \textwidth { \scshape {Name:} \enspace\hrulefill}
+%\vspace{0.7cm}
+
+
+\begin{questions}
+
+
+%%\question[1] $\displaystyle \frac{14}{3}\times\frac{9}{7}=$ 
+
+%%\begin{oneparchoices}
+%%\choice 6
+%%\choice $\displaystyle \frac{98}{27}$
+%%\choice $\displaystyle \frac{49}{9}$
+%%\choice $\displaystyle \frac{126}{21}$
+%%\end{oneparchoices}
+
+\question $\displaystyle \frac{3}{4}+\frac{5}{6}=$ 
+\begin{oneparchoices}
+\choice $\displaystyle \frac{4}{5}$
+\CorrectChoice $\displaystyle \frac{19}{12}$
+\choice $\displaystyle \frac{1}{3}$
+\choice $\displaystyle \frac{5}{8}$
+\end{oneparchoices}
+
+\question $\displaystyle \frac{3}{8}\div\frac{9}{4}=$ 
+\begin{oneparchoices}
+\choice $\displaystyle \frac{27}{32}$
+\choice $\displaystyle \frac{1}{8}$
+\CorrectChoice $\displaystyle \frac{1}{6}$
+\choice $\displaystyle \frac{1}{4}$
+\end{oneparchoices}
+
+\question 98 increased by 2\% is: 
+\begin{oneparchoices}
+\choice $\displaystyle 98.5$
+\choice $\displaystyle 99$
+\CorrectChoice $\displaystyle 99.96$
+\choice $\displaystyle 100$
+\end{oneparchoices}
+
+\question 
+What percent of 64 is 48?
+\begin{oneparchoices}
+\choice 133\%
+\choice 43\%
+\choice 57\%
+\CorrectChoice 75\%
+\end{oneparchoices}
+
+
+
+
+\question
+Marta is reading a book that is 150 pages long. So far she has read 30 pages. What percent of the book has she read?
+\begin{oneparchoices}
+\choice 5\%
+\choice 35\%
+\choice 30\%
+\CorrectChoice 20\%
+\end{oneparchoices}
+
+%%\question[1] 
+%%I can make 6 giant muffins using 2 cups of whole wheat flour. How many giant muffins can I make with 7 cups of flour?
+
+%%\begin{oneparchoices}
+%%\choice 14
+%%\choice 15
+%%\choice 21
+%%\choice 20
+%%\end{oneparchoices}
+%\newpage
+
+\question 
+An island is 75 square kilometers. Vegetation covers 70\% of the island. How many square kilometers are covered with vegetation?
+\begin{oneparchoices}
+\choice 48.5
+\choice 52
+\choice 49
+\CorrectChoice 52.5
+\end{oneparchoices}
+
+\question Convert 6\% into a decimal.
+\begin{oneparchoices}
+\choice 0.6
+\CorrectChoice 0.06
+\choice 6.0
+\choice 0.006
+\end{oneparchoices}
+
+%%\question[1] Convert 60\% into a decimal.
+%\vspace*{0.9cm}
+%\fillwithlines{1cm}
+%\smallskip
+
+%%\begin{oneparchoices}
+%%\choice 6.0
+%%\choice 0.6
+%%\choice 600.0
+%%\choice 0.06
+%%\end{oneparchoices}
+
+
+
+
+\question 
+The sales price of a shirt is reduced by \$6. This is a 20\% reduction of the original price. What is the original price?
+\begin{oneparchoices}
+\choice \$35
+\choice \$33.33
+\CorrectChoice \$30
+\choice \$26
+\end{oneparchoices}
+
+\question
+The area of  square A is 9 times the area of square B. How much larger is the side of the square A than the side of square B? [Area  = $\displaystyle s^2$, where $s$ is the side.]
+
+\begin{oneparchoices}
+\CorrectChoice 3 times
+\choice 9 times 
+\choice 81 times
+\choice 27 times
+\end{oneparchoices}
+
+\question The number of coins in a jar doubles every 5 days. If there are 5 coins in the jar today, how many coins will there be in the jar ten days from now?
+
+\begin{oneparchoices}
+\choice 10
+\choice 15
+\CorrectChoice 20
+\choice 25
+\end{oneparchoices}
+
+%%\question[1] 
+%%Riding my bicycle on a path going downhill takes me one-third the time as  riding on the same path going uphill. The downhill ride is $\displaystyle \frac{3}{4}$ of an hour. Which of the following choices best represents the length of the uphill ride? 
+
+%%\begin{oneparchoices}
+%%\choice 15 min
+%%\choice 26 min 40 sec
+%%\choice 2 hrs 30 min
+%%\choice 2 hrs 15 min
+%%\end{oneparchoices}
+
+\question Write the following six numbers in increasing order (start with the smallest and end with the largest): 
+
+\begin{tabbing}
+%3.2\quad\quad\= ; \= 3.202\kill\\
+3.2\quad\quad\=  \= 3.202\quad\quad\=  \= 3.222\quad\quad \=  \= 
+3.022 \quad\quad\=  \= 3.02\quad\quad \=  \= 3.002\\
+\end{tabbing}
+
+\begin{choices}
+
+\choice 
+\begin{tabbing}
+%3.2\quad\quad\= ; \= 3.202\kill\\
+3.02\quad\quad\=  \= 3.002\quad\quad\=  \= 3.022\quad\quad \=  \= 
+3.2 \quad\quad\=  \= 3.202\quad\quad \=  \= 3.222\\
+\end{tabbing}
+
+\CorrectChoice 
+\begin{tabbing}
+%3.2\quad\quad\= ; \= 3.202\kill\\
+3.002\quad\quad\=  \= 3.02\quad\quad\=  \= 3.022\quad\quad \=  \= 
+3.2 \quad\quad\=  \= 3.202\quad\quad \=  \= 3.222\\
+\end{tabbing}
+
+\choice 
+\begin{tabbing}
+%3.2\quad\quad\= ; \= 3.202\kill\\
+3.222\quad\quad\=  \= 3.202\quad\quad\=  \= 3.2\quad\quad \=  \= 
+3.022 \quad\quad\=  \= 3.02\quad\quad \=  \= 3.002\\
+\end{tabbing}
+
+\choice 
+\begin{tabbing}
+%3.2\quad\quad\= ; \= 3.202\kill\\
+3.002\quad\quad\=  \= 3.022\quad\quad\=  \= 3.02\quad\quad \=  \= 
+3.202 \quad\quad\=  \= 3.2\quad\quad \=  \= 3.222\\
+\end{tabbing}
+\end{choices}
+
+
+
+
+%\question[1] 
+%I have a bag of apples and a bag of pears. The apples weigh $\displaystyle 1\frac{3}{4}$ kg. The weight of the apples is half the weight of the bag of pears. What is the weight of the bag of pears? 
+
+%\begin{oneparchoices}
+%\choice $\displaystyle \frac{7}{4}$ kg
+%\choice $\displaystyle 3\frac{1}{2}$ kg
+%\choice $\displaystyle 3\frac{1}{4}$ kg
+%\choice $\displaystyle \frac{7}{8}$ kg
+%\end{oneparchoices}
+
+
+
+\end{questions}
+\end{document}

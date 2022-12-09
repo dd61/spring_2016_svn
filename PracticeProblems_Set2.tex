@@ -1,0 +1,155 @@
+\documentclass[10pt,answers]{exam}
+%\usepackage{mystyleTest}
+\usepackage{etex}
+\usepackage{amssymb,amsmath,multicol} %<-- InWorksheetExam1 i also have fancyhdr,
+
+\usepackage{hyperref}
+
+
+\usepackage[metapost]{mfpic}
+\usepackage[pdftex]{graphicx}
+
+\usepackage{pst-plot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\usepackage{tikz}
+\usepackage{tkz-2d}
+\usepackage{tkz-base}
+\usetikzlibrary{calc}
+
+\usepackage[inline]{enumitem}
+\usepackage{refcount}%<-- non in WorksheetExam1
+\usepackage{subcaption}
+
+\usepackage{tabularx, booktabs}
+
+
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{%
+		\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+\renewcommand\choicelabel{\circled{\thechoice}}
+
+\CorrectChoiceEmphasis{\color{red}}
+
+
+\setlength\answerlinelength{2in}
+\addpoints
+%\printanswers
+\noprintanswers
+
+\begin{document}
+
+\extrawidth{-0.3in}
+\pagestyle{headandfoot}
+
+\setlength{\hoffset}{-.25in}
+
+\extraheadheight{-.4in}
+
+%%\pagestyle{headandfoot}
+\extraheadheight{-0.9cm}
+%%\runningheadrule
+%%\firstpageheader{\bfseries {}}{ \bfseries {NYU SPS}}{\bfseries {McGhee Division}} 
+
+\parbox[b]{1.75in}{%
+	\vspace{0.5in}%
+	\includegraphics[scale=0.7,ext=.png]
+	{nyu-scps-logo-lg.png}%
+}%
+
+
+\begin{center}
+	{\bfseries {Practice Problems \#2}}
+\end{center}
+\bigskip
+ 
+
+%\vspace*{0.2cm}
+%\hbox to \textwidth { \scshape {Name:} \enspace\hrulefill}
+%\vspace{0.7cm}
+
+
+\begin{questions}
+
+\question 
+A new car was sold at \$30,000. Assume that the value of the car depreciates by 5\% per year. What is the value of the car two years after the purchase?
+
+\begin{oneparchoices}
+	\choice \$28,500
+	\choice \$28,000
+	\CorrectChoice \$27,075
+	\choice \$27,000
+	\choice \$26,500
+	\end{oneparchoices}
+	
+\question True or false? $\displaystyle (-5)^2=-5^2$.
+\begin{oneparchoices}
+\choice True
+\CorrectChoice False
+\end{oneparchoices}
+
+\question The formula $\displaystyle C=12N+5$ represents the total cost (in \$) 	of meals for $N$ people. 
+\begin{parts}
+	\part The unit of measure for 12 in the formula is:
+	
+	\begin{choices}
+		\choice Dollars;
+		\choice Number of people;
+		\CorrectChoice Dollars per person;
+		\choice Number of meals per dollar.
+		\end{choices}
+\part The unit of measure for 5 in the formula is:
+	\begin{choices}
+		\CorrectChoice Dollars;
+		\choice Number of people;
+		\choice Dollars per person;
+		\choice Number of meals per dollar.
+	\end{choices}	
+	\part According to the formula, how many meals can be purchased for \$113?
+	
+	\begin{oneparchoices}
+		\choice 11
+		\choice 10
+		\CorrectChoice 9
+		\choice 8
+		\end{oneparchoices}
+	
+	\end{parts}
+	
+	\question If I run two and a half kilometers per day, in how many days will I run 55 kilometers?
+	
+	\begin{oneparchoices}
+	\choice 	$\displaystyle 55\times 2.5$
+	\choice  $\displaystyle 2.5 \div 55$
+	\CorrectChoice $\displaystyle 55 \div 2.5$
+	\choice None of these
+		\end{oneparchoices}
+	
+	\question A rectangle has an area of a half square meter and one of the sides is 20 centimeters long. What is the lenght of the other side?
+	
+	\begin{oneparchoices}
+		\choice 10 meters
+		\choice 10 centimeters
+		\CorrectChoice 2.5 meters
+		\choice 2 meters
+		
+		\end{oneparchoices}
+
+\question In 1997, The New York Times reported that the percentage of tenth graders who smoked regularly was up 45\% from 1991, to 18.3\%. This means: 
+
+
+\begin{choices}
+\choice The percentage of tenth graders who smoked regularly went from 45\% in 1991 to 18.3\% in 1997.
+\CorrectChoice In 1991, approximately 12.62\% of tenth graders smoked regularly.
+\choice The report must be incorrect, because it would mean that in 1991 the percent of tenth graders who were smokers was negative (18.3\%-45\%).
+\choice The statement does not make sense, because the number of tenth graders in 1991 may be different from the number of tenth graders in 1997.
+\end{choices}
+
+
+
+
+
+
+\end{questions}
+\end{document}

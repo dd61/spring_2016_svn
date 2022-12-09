@@ -1,0 +1,212 @@
+\documentclass[11pt,dvipsnames]{article}
+
+\usepackage{etex}
+\usepackage{amssymb,amsmath,multicol} %<-- InWorksheetExam1 i also have fancyhdr,
+
+\usepackage[metapost]{mfpic}
+\usepackage[pdftex]{graphicx}
+
+\usepackage{pst-plot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\usepackage{tikz}
+\usepackage{tkz-2d}
+\usepackage{tkz-base}
+\usetikzlibrary{calc}
+\usepackage{color}
+\usepackage[inline]{enumitem}
+\usepackage{refcount}%<-- non in WorksheetExam1
+
+\usepackage[linewidth=1pt]{mdframed}
+
+\usepackage{caption}
+%\renewcommand{\headrulewidth}{0pt}
+
+%%These three lines are for the typewriter font. Comment them out if I don't want the font.
+%%%%%%\renewcommand*\ttdefault{lcmtt}
+%%%%%%\renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
+%%%%%%\usepackage[T1]{fontenc}
+%%%%%%
+
+\usepackage{tabularx, booktabs}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\newcommand{\vasymptote}[2][]{
+	\draw [densely dashed,#1] ({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});
+}
+
+\newcommand{\inlineitem}[1][]{%
+	\ifnum\enit@type=\tw@
+	{\descriptionlabel{#1}}
+	\hspace{\labelsep}%
+	\else
+	\ifnum\enit@type=\z@
+	\refstepcounter{\@listctr}\fi
+	\quad\@itemlabel\hspace{\labelsep}%
+	\fi}
+
+\usetikzlibrary{automata}
+
+\usepackage{hyperref}% http://ctan.org/pkg/hyperref
+
+\usepackage{geometry}
+\geometry{
+	%a4paper,
+	%total={170mm,257mm},
+	%left=20mm,
+	%top=20mm,
+	text={.8\paperwidth,.9\paperheight}, ratio=1:1,includefoot
+}
+
+
+\opengraphsfile{Wk4_Questions_Spring_16}
+
+\begin{document}
+\thispagestyle{empty}
+We can do function arithmetic ($+,-,\times, \div$) by defining the four operations in the obvious way. For example, if we start with two functions $f$ and $g$, the function $f+g$ is the rule that pairs each  $x$ to $f(x)+g(x)$.  {\bf{Important question}}: which $x$ values can I use to create $f+g, f-g,fg,\frac{g}{f}$? Let's try to answer it using an example.
+						
+The graph of two functions, $f(x)$ and $g(x)$, are shown below.
+
+
+\begin{minipage}{0.5\linewidth}
+\begin{center}
+
+\begin{mfpic}[20]{-3}{6}{-2}{5}
+
+\polyline{(-2,2), (2,0)} 
+\polyline{(2,0), (4,2)}
+\point[5pt]{(-2,2), (4,2)}
+\tcaption{\scriptsize $y=f(x)$}
+\axes
+\xmarks{-2,-1,1,2,3,4,5}
+\ymarks{-2,-1,1,2,3,4,}
+\tlpointsep{4pt}
+\axislabels {x}{{\tiny $-2$} -2,{\tiny $-1$} -1,{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4, {\tiny $5$} 5}
+\axislabels {y}{{\tiny $1$} 1,{\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4,  {\tiny $-1$} -1, {\tiny $-2$} -2}
+\drawcolor[gray]{0.75} 
+\grid{1,1}
+\end{mfpic}
+\end{center}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+\begin{center}
+
+\begin{mfpic}[20]{-1}{6}{-2}{5}
+
+%\polyline{(0,-2), (4,1), (4,2), (5,3)}
+
+\polyline{(0,0), (3,2)} 
+
+\polyline{(3,3), (5,4)}
+
+\point[5pt]{(0,0), (3,2), (5,4)}
+\circle{(3, 3),0.15}
+\tcaption{\scriptsize $y=g(x)$}
+\axes
+
+\xmarks{1,2,3,4,5}
+
+\ymarks{-2,-1,1,2,3,4,}
+
+\tlpointsep{4pt}
+
+\axislabels {x}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4, {\tiny $5$} 5}
+
+\axislabels {y}{{\tiny $1$} 1,{\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4,  {\tiny $-1$} -1, {\tiny $-2$} -2}
+
+\drawcolor[gray]{0.75} 
+\grid{1,1}
+
+\end{mfpic}
+\end{center}
+\end{minipage}
+\begin{enumerate}[label=$\blacktriangleright$ {\bf  \arabic*:}]
+
+\item Fill out the table:
+
+
+\begin{minipage}{\linewidth}
+\centering
+\captionof{table}{} %\label{tab:title} 
+\begin{tabularx}{0.8\textwidth}{|X|X|X|X|X|X|X|X|X|X|}
+\hline
+\multicolumn{2}{|c|}{$x$}         &$-2$&$-1$& $0$ & $1$ & $2$ & $3$ & $4$ & $5$ \\ \hline
+\multicolumn{2}{|c|}{$f(x)+g(x)$}   & & &     &     &     &     &     &     \\ \hline
+\end{tabularx}
+\end{minipage}
+
+\item Find the domain and range of $f$, and the domain and range of $g$. Write them in interval form.
+\item What is the domain of the function $f(x)+g(x)$?
+\item Write formulas for $f(x), g(x)$ and $f(x)+g(x)$. 
+\item Graph $f(x)+g(x)$.
+\item \label{ettob} Fill out the table:
+
+\begin{minipage}{\linewidth}
+\centering
+\captionof{table}{} \label{tab:ettob1}  
+\begin{tabularx}{0.8\textwidth}{|X|X|X|X|X|X|X|X|X|X|}
+\hline
+\multicolumn{2}{|c|}{$x$}         & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ \\ \hline
+\multicolumn{2}{|c|}{$\displaystyle \frac{g(x)}{f(x)}$} & &      &     &     &     &     &     &     \\ \hline
+\end{tabularx}
+\end{minipage}
+
+\item What is the domain of $\displaystyle \frac{g(x)}{f(x)}$?
+\item Now we compose $f$ and $g$ by applying one after the other. For example, we can start with $g$, and feed all its outputs into $f$. The result is a new function, called $f(g(x))$. For example, $f(g(0))=f(0)=1$: we start with $x=0$ and look at the output given by $f$ when $x$ is zero. We see that this output is zero, so we feed it to the function $f$ and find $f(0)$.
+\begin{enumerate}[label=\textcolor{blue}{\bf (\alph*)}]
+	\item Fill out the table (note: you need to choose the $x$-values.)
+	
+	
+	\begin{minipage}{\linewidth}
+		\centering
+		\captionof{table}{} \label{tab:ettob2}  
+		\begin{tabularx}{0.8\textwidth}{|X|X|X|X|X|X|X|X|X|X|}
+			\hline
+			\multicolumn{2}{|c|}{$x$}         &  &  &  &  &  &  &  &  \\ \hline
+			\multicolumn{2}{|c|}{$\displaystyle f(g(x))$} & &      &     &     &     &     &     &     \\ \hline
+		\end{tabularx}
+	\end{minipage}
+\item What is the domain of $f(g(x))$?
+\item Fill out the table (note: you need to choose the $x$-values.)
+
+
+\begin{minipage}{\linewidth}
+	\centering
+	\captionof{table}{} \label{tab:ettob2}  
+	\begin{tabularx}{0.8\textwidth}{|X|X|X|X|X|X|X|X|X|X|}
+		\hline
+		\multicolumn{2}{|c|}{$x$}         &  &  &  &  &  &  &  &  \\ \hline
+		\multicolumn{2}{|c|}{$\displaystyle g(f(x))$} & &      &     &     &     &     &     &     \\ \hline
+	\end{tabularx}
+\end{minipage}
+\item What is the domain of $g(f(x))$?		
+	
+	\item We can also compose a function with itself (it his famous 1976 paper on population growth, Prof.~Peter May composes a function with itself to get information about population trends). Fill out the table:
+	
+	
+	\begin{minipage}{\linewidth}
+		\centering
+		\captionof{table}{} \label{tab:ettob3}  
+		\begin{tabularx}{0.8\textwidth}{|X|X|X|X|X|X|X|X|X|X|}
+			\hline
+			\multicolumn{2}{|c|}{$x$}         &  &  &  &  &  &  &  &  \\ \hline
+			\multicolumn{2}{|c|}{$\displaystyle g(g(x))$} & &      &     &     &     &     &     &     \\ \hline
+		\end{tabularx}
+	\end{minipage}
+	\item What is the domain of $g(g(x))$?	
+\end{enumerate}	
+\item In the table shown below, is $x$ a function of $y$? (Note: I created this table by using the function values of $f(x)$.)
+
+
+	\begin{minipage}{\linewidth}
+		\centering
+		\captionof{table}{} \label{tab:ettob4}  
+		\begin{tabularx}{0.8\textwidth}{|X|X|X|X|X|X|X|X|X|}
+			\hline
+			\multicolumn{2}{|c|}{$x$}         & -2 & -1 & 0 & 1 & 2 & 3 & 4   \\ \hline
+			\multicolumn{2}{|c|}{$\displaystyle y$} &2 &  1.5 &  1   &  0.5   &0     & 1    &  2      \\ \hline
+		\end{tabularx}
+	\end{minipage}
+\end{enumerate}
+\end{document}                 

@@ -1,0 +1,223 @@
+\documentclass[11pt,dvipsnames]{article}
+
+\usepackage{etex}
+\usepackage{amssymb,amsmath,multicol} %<-- InWorksheetExam1 i also have fancyhdr,
+
+\usepackage[metapost]{mfpic}
+\usepackage[pdftex]{graphicx}
+
+\usepackage{pst-plot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\usepackage{tikz}
+\usepackage{tkz-2d}
+\usepackage{tkz-base}
+\usetikzlibrary{calc}
+\usepackage{color}
+\usepackage[inline]{enumitem}
+\usepackage{refcount}%<-- non in WorksheetExam1
+
+
+
+\usepackage{tabularx, booktabs}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+
+
+%%%\usepackage{background}
+%%%\newsavebox\mybox %%%%put the three lines in if I want DRAFT
+%%\savebox\mybox{\tikz[color=red!50,opacity=0.4]\node{Draft};}
+
+\newcommand{\vasymptote}[2][]{
+	\draw [densely dashed,#1] ({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});
+}
+
+\newcommand{\inlineitem}[1][]{%
+	\ifnum\enit@type=\tw@
+	{\descriptionlabel{#1}}
+	\hspace{\labelsep}%
+	\else
+	\ifnum\enit@type=\z@
+	\refstepcounter{\@listctr}\fi
+	\quad\@itemlabel\hspace{\labelsep}%
+	\fi}
+
+\usetikzlibrary{automata}
+
+\usepackage{hyperref}% http://ctan.org/pkg/hyperref
+
+\usepackage{geometry}
+\geometry{
+	%a4paper,
+	%total={170mm,257mm},
+	%left=20mm,
+	%top=20mm,
+	text={.8\paperwidth,.9\paperheight}, ratio=1:1,includefoot
+}
+
+
+\setlength{\parindent}{0pt} % disable paragraph indentation
+\newlength{\linesepskip}
+\setlength{\linesepskip}{2pt} % adjust to suit
+
+\newcommand*{\linesep}[1]{%
+	\par\nobreak
+	\vskip 3pt \leaders\vrule width #1\vskip 0.81pt
+	\nobreak
+}
+
+\usepackage{tabu}
+
+%%\backgroundsetup{angle=60,contents={\usebox\mybox}} "DRAFT" "DRAFT" 
+\begin{document}
+	\begin{center}
+		{\Large Classroom Observation Report}
+	\end{center}
+\begin{minipage}{0.35\textwidth}
+		Dr.~Sergios-Orestis Kolokotronis \par
+		\linesep{\textwidth}
+		Instructor
+	\end{minipage}
+\hspace{0.2\textwidth}
+	\begin{minipage}{0.35\textwidth}
+			SCNC1-UC3203 \par
+			\linesep{\textwidth}
+			Course
+		\end{minipage}
+		
+\vskip 1cm
+		
+\begin{minipage}{0.35\textwidth}
+	Donatella Delfino \par
+	\linesep{\textwidth}
+	Observer
+\end{minipage}
+\hspace{0.2\textwidth}
+\begin{minipage}{0.35\textwidth}
+	2/29/16-3/6/16 \par
+	\linesep{\textwidth}
+	Date of observation
+\end{minipage}
+
+\vskip 1cm
+
+\begin{minipage}{0.35\textwidth}
+	16 students present in week 3 forum \par
+	\linesep{\textwidth}
+	\# of students present in the week
+\end{minipage}
+
+\vskip 1cm
+
+\begin{minipage}{0.35\textwidth}
+	Various days/times during the week \par
+	\linesep{\textwidth}
+	Observer's login time
+\end{minipage}
+\hspace{0.2\textwidth}
+\begin{minipage}{0.35\textwidth}
+	Variable \par
+	\linesep{\textwidth}
+	Observer's logout time
+\end{minipage}
+
+\vskip 1cm
+{\large Observer}
+
+Comment on and rate each item below and add comments in space provided:
+\vskip 0.5cm
+
+%%\begin{minipage}{\linewidth}
+%%	\centering 
+%%	\begin{tabular}[t]{|c|c|c|c|c|p{3cm}|}
+%%		\hline
+%%		5 = Excellent    & 4 =Very Good & 3 = Good & 2 = Fair & 1 = Poor & NA = Not appropriate for this class  \\ \hline
+		
+%%	\end{tabular}
+%%\end{minipage}
+
+{\tabulinesep=1.2mm
+	\begin{tabu}{c  c c c c p{4cm} }
+		
+		5 = Excellent   & 4 =Very Good & 3 = Good & 2 = Fair & 1 = Poor & NA = Not appropriate for this class  \\ 	
+	\end{tabu}}
+\vskip 0.5cm
+
+\begin{enumerate}[label= {\bf  \arabic*:}]
+	\item
+	\begin{tabular}[t]{p{0.5\textwidth} p{3cm} p{2cm} }
+		Knowledge of subject & & Rating: 5\\
+		& & \\
+		%Dr. Kolokotronis is an evolutionary biologist with an established research program and a solid track record of publications. & & \\
+	\end{tabular} 
+	
+	
+	\item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+		Clarity of learning objectives for the course as a whole and for the week's lesson within the course & & Rating: 5
+	\end{tabular} 
+	\item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+		Clarity of criteria for assessing student performance for all activities & & Rating: 4\\
+		& & \\
+		The criteria for assessment are clearly articulated in the syllabus, and are posted both in the pdf of the syllabus and as a separate item in the syllabus folder of NYUClasses. I could not find a posted rubric for grading of student participation in the weekly forums. & & \\
+		\end{tabular} 
+    \item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+	Selection of appropriate instructional materials and methods & & Rating: 4\\
+	& &\\
+	Students are given access to a PowerPoint presentation, videos, websites, two thought-provoking multiple choice questions and a forum, where they have to post on one broad question (How do humans accelerate species extinction?) The instructions for the forum post(s) do not require students to give feedback to other students.
+\end{tabular} 
+\item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+	Effective time management including building of appropriate
+	time frames for activities and assignments & & Rating: 5\\
+	
+\end{tabular}
+\item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+Evidence of faculty engagement, interaction with students, timely feedback and ongoing assessment & & Rating: NA\\
+& &\\
+I could not open the weeks 5 and 6 forums, so I reviewed the week 3 forum. Here, Dr. Kolokotronis commented to a few (but not all) posts by students.
+\end{tabular}
+\item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+	Evidence of student engagement and interaction & & Rating: 2\\
+	& &\\
+	There is minimal interaction among students, and usually there is only a couple of students who give feedback to other students. Students' posts are usually quite short. & &\\
+\end{tabular}
+\item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+	Encouragement of critical and analytical thinking & & Rating: 5
+\end{tabular}
+\item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+	Clarity of navigation & & Rating: 5
+\end{tabular}
+\item 	\begin{tabular}[t]{p{0.5\textwidth}  p{3cm} p{3cm} }
+	Effective use of platform functionalities for organizing and
+	pacing the material of the course and the work of the students & & Rating: 5
+\end{tabular}
+\end{enumerate}
+%\begin{enumerate}[label=$\hdots$ {\bf  \alph*:}]
+\vskip 1cm
+{\large Additional comments}
+
+None.
+
+\vskip 1cm
+{\large Recomendations}
+
+Dr.~Kolokotronis has reached out to me during the semester regarding student participation in the forum, because he had observed that some students were very late in posting to the forums (some of them even posted the week after the comments were due.) I suggested him to remind the students about the grading policies (no credit for late posts). Additional recommendations are:
+\begin{itemize}
+	\item Require the students to give their initial response to a question by (for example) Thursday, and give substantive feedback to two other students' forum posts by (for example) Sunday.
+	\item In the syllabus folder, post an example of a response to a question, and an example of substantive feedback.
+	\item Create a grading rubric for forum posts.
+	\item Have more online quizzes, as a preparation for the exams. 
+	\item Attend a webinar on online pedagogy offered by the SPS Center for Academic Excellence and Support (CAES, \url{https://wp.nyu.edu/spscaes/events/})
+	
+	
+\end{itemize}
+\vskip 1cm
+{\large Observer's evaluation of the class}
+
+{\tabulinesep=1.2mm
+	\begin{tabu}{c  c c c c  }
+		
+		5 = Excellent   & {\fbox{4 =Very Good}} & 3 = Good & 2 = Fair & 1 = Poor   \\ 	
+	\end{tabu}}
+
+\end{document}                 

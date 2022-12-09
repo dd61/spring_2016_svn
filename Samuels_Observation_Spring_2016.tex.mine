@@ -1,0 +1,273 @@
+\documentclass[11pt,dvipsnames]{article}
+
+\usepackage{etex}
+\usepackage{amssymb,amsmath,multicol} %<-- InWorksheetExam1 i also have fancyhdr,
+
+\usepackage[metapost]{mfpic}
+\usepackage[pdftex]{graphicx}
+
+\usepackage{pst-plot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\usepackage{tikz}
+\usepackage{tkz-2d}
+\usepackage{tkz-base}
+\usetikzlibrary{calc}
+\usepackage{color}
+\usepackage[inline]{enumitem}
+\usepackage{refcount}%<-- non in WorksheetExam1
+\usepackage{changepage}% http://ctan.org/pkg/changepage
+
+%%%%\usepackage[linewidth=1pt]{mdframed}
+
+%%%%\usepackage{caption}
+%\renewcommand{\headrulewidth}{0pt}
+
+%%These three lines are for the typewriter font. Comment them out if I don't want the font.
+%%%%%%\renewcommand*\ttdefault{lcmtt}
+%%%%%%\renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
+%%%%%%\usepackage[T1]{fontenc}
+%%%%%%
+
+\usepackage{tabularx, booktabs}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+
+
+%\usepackage{background}
+%\newsavebox\mybox
+%\savebox\mybox{\tikz[color=red!50,opacity=0.4]\node{Draft};}
+
+\newcommand{\vasymptote}[2][]{
+	\draw [densely dashed,#1] ({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});
+}
+
+\newcommand{\inlineitem}[1][]{%
+	\ifnum\enit@type=\tw@
+	{\descriptionlabel{#1}}
+	\hspace{\labelsep}%
+	\else
+	\ifnum\enit@type=\z@
+	\refstepcounter{\@listctr}\fi
+	\quad\@itemlabel\hspace{\labelsep}%
+	\fi}
+
+\usetikzlibrary{automata}
+
+\usepackage{hyperref}% http://ctan.org/pkg/hyperref
+
+\usepackage{geometry}
+\geometry{
+	%a4paper,
+	%total={170mm,257mm},
+	%left=20mm,
+	%top=20mm,
+	text={.8\paperwidth,.9\paperheight}, ratio=1:1,includefoot
+}
+
+
+\setlength{\parindent}{0pt} % disable paragraph indentation
+\newlength{\linesepskip}
+\setlength{\linesepskip}{2pt} % adjust to suit
+
+\newcommand*{\linesep}[1]{%
+	\par\nobreak
+	\vskip 3pt \leaders\vrule width #1\vskip 0.81pt
+	\nobreak
+}
+
+\usepackage{tabu}
+
+%\backgroundsetup{angle=60,contents={\usebox\mybox}}
+\begin{document}
+	\begin{center}
+		{\Large Classroom Observation Report}
+	\end{center}
+\begin{minipage}{0.35\textwidth}
+		Dr.~Jason Samuels \par
+		\linesep{\textwidth}
+		Instructor
+	\end{minipage}
+\hspace{0.2\textwidth}
+	\begin{minipage}{0.35\textwidth}
+			SCNC1-UC2104 \par
+			\linesep{\textwidth}
+			Course
+		\end{minipage}
+		
+\vskip 1cm
+		
+\begin{minipage}{0.35\textwidth}
+	Donatella Delfino \par
+	\linesep{\textwidth}
+	Observer
+\end{minipage}
+\hspace{0.2\textwidth}
+\begin{minipage}{0.35\textwidth}
+	3/3/2016 \par
+	\linesep{\textwidth}
+	Date of observation
+\end{minipage}
+
+\vskip 1cm
+
+\begin{minipage}{0.35\textwidth}
+	11 \par
+	\linesep{\textwidth}
+	\# of students present in the week
+\end{minipage}
+
+\vskip 1cm
+
+\begin{minipage}{0.35\textwidth}
+	6 pm \par
+	\linesep{\textwidth}
+	Observer's arrival time
+\end{minipage}
+\hspace{0.2\textwidth}
+\begin{minipage}{0.35\textwidth}
+	7:30 pm \par
+	\linesep{\textwidth}
+	Observer's departure time
+\end{minipage}
+
+\vskip 1cm
+{\large Observer}
+
+Comment on and rate each item below and add comments in space provided:
+\vskip 0.5cm
+
+%%\begin{minipage}{\linewidth}
+%%	\centering 
+%%	\begin{tabular}[t]{|c|c|c|c|c|p{3cm}|}
+%%		\hline
+%%		5 = Excellent    & 4 =Very Good & 3 = Good & 2 = Fair & 1 = Poor & NA = Not appropriate for this class  \\ \hline
+		
+%%	\end{tabular}
+%%\end{minipage}
+
+{\tabulinesep=1.2mm
+	\begin{tabu}{c  c c c c p{4cm} }
+		
+		5 = Excellent   & 4 =Very Good & 3 = Good & 2 = Fair & 1 = Poor & NA = Not appropriate for this class  \\ 	
+	\end{tabu}}
+\vskip 0.5cm
+
+\begin{enumerate}[label= {\bf  \arabic*:}]
+	\item
+	\begin{tabular}[t]{p{0.6\textwidth} p{2cm} p{2cm} }
+		Knowledge of subject & & Rating: 5 \\
+			&&\\
+			Students asked many questions on friction and conservation of momentum, and Dr.~Samuels answered with ease and confidence. & & \\ 
+		%Dr. Kolokotronis is an evolutionary biologist with an established research program and a solid track record of publications. & & \\
+	\end{tabular} 
+	
+	
+	\item 		\begin{tabular}[t]{p{0.6\textwidth} p{2cm} p{2cm} }
+		Clarity of learning objectives for the course as a whole and for the week's lesson within the course & & Rating: 5\\
+	    & & \\
+	    The objectives of the course (paraphrased from the syllabus) are to make students proficient in explaining the following concepts using the laws of physics: linear and rotational motion, bouncing and oscillations, gravitation and orbits, properties and actions of a gas, thermal energy, and sound. More broadly, the course aims to enable students to describe a variety of everyday phenomena (from riding a bicycle to bouncing a ball) using physics.
+	    
+	    The objectives of the class fit seamlessly into the course objectives: students reviewed friction, and learned about conservation of momentum in a closed system, represented by two bumper cars gliding on a smooth surface. && \\
+	\end{tabular} 
+	\item 		\begin{tabular}[t]{p{0.6\textwidth} p{2cm} p{2cm} }
+		Clarity of criteria for assessing student performance for all activities & & Rating: 4 \\
+		& & \\
+		The assessment consists of online homework (on the online homework system WileyPlus), in-class quizzes, two exams and a paper. The syllabus provides a short description of the expectations for the paper, but does not outline requirements such as length, bibliography, etc. &  & \\
+		\end{tabular} 
+    \item 		\begin{tabular}[t]{p{0.6\textwidth} p{2cm} p{2cm} }
+	Selection of appropriate instructional materials and methods & & Rating: 5\\
+	& &\\
+	The textbook, ``How Things Work'', by Louis Bloomfield, is very appropriate to introduce physics to non-majors. Indeed, one of the author's areas of expertise is the pedagogy of physics instruction for non STEM majors. The demonstration on bumper cars was a success: after Dr.~Samuels' brief introduction on conservation of momentum, most students demonstrated a basic understanding of the concept and were able to follow the demonstration, make predictions and ask pertinent questions. The demonstration led to a lively discussion of other situations where the conservation of momentum plays a crucial role (for example, a rocket launch.)
+	
+	When a student asks a question, Dr.~Samuels does not immediately volunteer the answer: instead, he pauses (the pauses can feel long, but they are actually just a few seconds) so that oftentimes either the student who has asked the question elaborates on it, making in clearer, or other students answer.  & &\\
+\end{tabular} 
+\item 		\begin{tabular}[t]{p{0.6\textwidth} p{2cm} p{2cm} }
+	Effective time management including building of appropriate
+	time frames for activities and assignments & & Rating: 5\\
+	& &\\
+	The pace of the course is appropriate and the activities within the lesson do not feel rushed or too slow. &&\\
+	
+\end{tabular}
+\item 		\begin{tabular}[t]{p{0.6\textwidth} p{2cm} p{2cm} }
+Evidence of faculty engagement, interaction with students, timely feedback and ongoing assessment & & Rating: 4\\
+& &\\
+The class is very interactive, because the questions that Dr.~Samuels asks do not have a simple yes/no answer: they are designed to make students think in terms of physics. Two of the questions were: ``As you pedal forward, what is exerting the force that the bicycle needs to accelerate? What would change if you were pedaling on ice?'' 
+
+Students have to submit the topic of their paper to Dr.~Samuels, but there are no formal deadlines for the paper until the submission date of May 5th: students are not give the opportunity to submit a draft for critique, and may procrastinate working on the paper.
+& &\\
+\end{tabular}
+\item 		\begin{tabular}[t]{p{0.6\textwidth} p{2cm} p{2cm} }
+	Evidence of student engagement and interaction & & Rating: 4\\
+	& &\\
+	Most of the students were participating very actively: however, two students in the first row, and two students in the last row were not as vocal as the rest of the class. & &\\
+\end{tabular}
+\item 		\begin{tabular}[t]{p{0.6\textwidth} p{2cm} p{2cm} }
+	Encouragement of critical and analytical thinking & & Rating: 5\\
+\end{tabular}
+%%\item 		\begin{tabular}[t]{p{0.6\textwidth} p{2cm} p{2cm} }
+%%	Clarity of navigation & & Rating: 
+%%\end{tabular}
+%%\item 		\begin{tabular}[t]{p{0.6\textwidth} p{2cm} p{2cm} }
+%%	Effective use of platform functionalities for organizing and
+%%	pacing the material of the course and the work of the students & & Rating: 
+%%\end{tabular}
+\end{enumerate}
+%\begin{enumerate}[label=$\hdots$ {\bf  \alph*:}]
+\vskip 1cm
+{\large Additional comments}
+
+%\vskip 5cm %comment out
+
+Here are some points that Dr.~Samuels and I discussed at our post observation meeting.
+\begin{enumerate}[label=\textcolor{blue}{\bf (\alph*)}]
+	\item Grading rubric for the paper.
+	\begin{adjustwidth}{1cm}{1cm}
+	I shared the grading rubric that I developed when I taught the course. The rubric is attached at the end of this document.
+	\end{adjustwidth}
+	\item What types of in-class demonstrations have you done so far? How did they go?
+	\begin{adjustwidth}{1cm}{1cm}
+	Demonstrations from the book as well as other demonstrations. For example, Dr.~Samuels plans to do the \emph{double ball bounce} demonstration (\url{http://phun.physics.virginia.edu/demos/double.html}) with two basketballs.
+	\end{adjustwidth}
+	\item Is there anything that you would like to change in the organization of the course? Why would you change it?
+	\begin{adjustwidth}{1cm}{1cm}
+	It would be great to be able to go slightly faster, but it doesn't seem possible because the class meets only once a week.
+	\end{adjustwidth}
+	
+\item What is the aspect of the course that you like the most?
+\begin{adjustwidth}{1cm}{1cm}
+The class is fun to teach!
+\end{adjustwidth}
+%\item What is the aspect of the course that you like the most?
+%\item What is the concept that students have found most difficult so far?
+\item How is the online homework going?
+\begin{adjustwidth}{1cm}{1cm}
+The majority of the students are keeping up with the homework.
+\end{adjustwidth} 
+
+	\end{enumerate}
+
+\vskip 1cm
+{\large Recomendations}
+%\vskip 5cm %comment out
+
+\begin{itemize}
+	\item Create a timeline for the paper during the semester (for example, topic of the project, bibliography, draft of the paper).
+	\item Consider asking questions to all students. 
+	
+	
+	
+\end{itemize}
+\vskip 1cm
+{\large Observer's evaluation of the class}
+
+%CHANGE AS APPROPRIATE
+
+{\tabulinesep=1.2mm
+	\begin{tabu}{c  c c c c  }
+		
+		5 = Excellent   & {\fbox{4 =Very Good}} & 3 = Good & 2 = Fair & 1 = Poor   \\ 	
+	\end{tabu}}
+
+\end{document}                 

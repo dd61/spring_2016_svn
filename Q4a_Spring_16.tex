@@ -1,0 +1,177 @@
+\documentclass[11pt,answers]{exam}
+
+
+\usepackage[margin=0.8in,footskip=0.2in]{geometry}
+
+\usepackage{etex}
+\usepackage{amssymb,amsmath,multicol} %<-- InWorksheetExam1 i also have fancyhdr,
+
+\usepackage[metapost]{mfpic}
+\usepackage[pdftex]{graphicx}
+
+\usepackage{pst-plot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\usepackage{tikz}
+\usepackage{tkz-2d}
+\usepackage{tkz-base}
+\usetikzlibrary{calc}
+
+\usepackage{tabularx, booktabs}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\usepackage[inline]{enumitem}
+\usepackage{refcount}%<-- non in WorksheetExam1
+
+\usepackage{pstricks-add,pst-eucl}
+\usepackage{caption}
+
+\def\f{x+1} \def\g{-x/3+2}  \def\h{-x+3}
+
+\newcommand{\vasymptote}[2][]{
+	\draw [densely dashed,#1] ({rel axis cs:0,0} -| {axis cs:#2,0}) -- ({rel axis cs:0,1} -| {axis cs:#2,0});
+}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{%
+		\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+\renewcommand\choicelabel{\circled{\thechoice}}
+
+
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+
+\addpoints
+%\printanswers
+\noprintanswers
+
+\usepackage{geometry}
+\geometry{
+	%a4paper,
+	%total={170mm,257mm},
+	%left=20mm,
+	%top=20mm,
+	text={.95\paperwidth,.95\paperheight}, ratio=1:3,%includefoot
+}
+
+\opengraphsfile{Q4a_Spring_16}
+
+\begin{document}
+%\extrawidth{-0.3in}
+\pagestyle{headandfoot}
+
+%\setlength{\hoffset}{-.25in}
+
+%\extraheadheight{-.3in}
+\runningheadrule
+\firstpageheader{\bfseries {MATH1-UC 1171}}{ \bfseries {Quiz 4 }}{\bfseries {2/23/2016}} 
+
+
+
+\firstpagefooter{} %%&&CHANGED
+                {}
+                {Points earned: \hbox to 0.5in{\hrulefill}
+                 out of  \pointsonpage{\thepage} points}
+                 
+						
+
+%\vspace*{0.1cm}
+\hbox to \textwidth { \scshape {Name:} \enspace\hrulefill}
+\vspace{0.1in}
+
+
+
+
+\pointpoints{point}{points}
+
+\begin{questions}
+
+
+\addpoints
+
+
+\question A tank holds 100 gallons of water, which drains from a leak at the bottom, causing the tank to drain in 40 minutes. The volume of water remaining in the tank after $t$ minutes is $\displaystyle V(t)=100\left (1-\frac{t}{40}\right )^2$.
+\begin{parts}
+	\part[2]  Find $\displaystyle V^{-1}(100)$. Show your work step by step.
+	\fillwithdottedlines{2cm} 
+	\part[1] Does $\displaystyle V^{-1}(100)$ represent time or volume? \dotfill
+	\end{parts}  
+
+\question[2] The function shown below is not one-to-one.
+
+\begin{minipage}{0.5\linewidth}
+\begin{mfpic}[15]{-3}{3}{0}{5.5}
+	\arrow \reverse \arrow \function{-2.2,2.2,0.1}{x**2}
+	%\point[3pt]{(-2,4), (-1,1), (0,0), (1,1), (2,4)}
+	\axes
+
+	\xmarks{-2,-1,1,2}
+	\ymarks{1,2,3,4}
+	\tcaption{$f(x) = x^2$}
+	\tlpointsep{4pt}
+	\axislabels {x}{{\tiny $-2 \hspace{7pt}$} -2, {\tiny $-1 \hspace{7pt}$} -1, {\tiny $1$} 1, {\tiny $2$} 2}
+	\axislabels {y}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
+\end{mfpic}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+	 Restrict its domain so that the resulting function is one-to-one. Write your answer in interval form. (Note: there are many possible correct answers).
+	 \fillwithdottedlines{2cm}
+	 \end{minipage}
+\question[3] A function $h(x)$ is shown below.
+
+\begin{minipage}{0.5\linewidth}
+	\begin{center}
+		
+		\begin{mfpic}[20]{-1}{3}{-1}{5}
+			
+			%\polyline{(0,-2), (4,1), (4,2), (5,3)}
+			
+			\polyline{(0,3), (2,3)} 
+		
+			
+			\point[5pt]{(0,3), (2,3)}
+			
+			%\tcaption{\scriptsize $y=h(x)$}
+			\axes
+			
+			\xmarks{1,2,3}
+			
+			\ymarks{-1,1,2,3,4,}
+			
+			\tlpointsep{4pt}
+			
+			\axislabels {x}{{\tiny $1$} 1, {\tiny $2$} 2, {\tiny $3$} 3}
+			
+			\axislabels {y}{{\tiny $1$} 1,{\tiny $2$} 2, {\tiny $3$} 3, {\tiny $4$} 4}
+			
+			\drawcolor[gray]{0.75} 
+			\grid{1,1}
+			
+		\end{mfpic}
+	\end{center}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+	Fill out the table. If a table entry does not exist, write DNE.
+	\smallskip
+	
+	\centering
+	%\captionof{table}{} %\label{tab:title} 
+	\begin{tabularx}{0.8\textwidth}{|X|X|X|X|X|}
+		\hline
+		\multicolumn{2}{|c|}{$x$}         &$0$&$1$& $2$  \\ \hline
+		\multicolumn{2}{|c|}{$h(h(x))$}   &   &   &      \\ \hline
+	\end{tabularx}
+\end{minipage}
+\question Consider the following functions:
+$\displaystyle f(x) = x-2$,     $\displaystyle g(x) = \sqrt{x}$ 
+\begin{parts}
+	\bonuspart[1] Find $\displaystyle f(4)+g(4)$. \dotfill
+	\bonuspart[1] Find $\displaystyle \frac{g(4)}{f(4)}$ \dotfill
+	\part[1] Write the domain of $\displaystyle f(x)+g(x)$ in interval form. \dotfill
+	\part[1] Write the domain of $\displaystyle \frac{g(x)}{f(x)}$ in interval form. \dotfill
+	\end{parts}
+\end{questions}
+
+\end{document}                 

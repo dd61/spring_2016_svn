@@ -1,0 +1,121 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=1in,landscape]{geometry}
+%\usepackage[addmargin]{stubs}
+\usepackage{miscdoc,url,booktabs,microtype,hyperref}
+\usepackage{amssymb,amsmath,multicol}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[skins]{tcolorbox}
+\usepackage{fancybox}
+\usepackage{pifont}
+%%%%\usepackage{background}
+%%%%\backgroundsetup{
+%%%%scale=1,
+%%%%angle=0,
+%%%%opacity=.4,  %% adjust
+%%%%contents={\includegraphics[width=\paperwidth,height=\paperheight]{Bioinfocloud1}}
+%%%%}
+\usepackage{tikz}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{trees}
+\usetikzlibrary{calc}
+\usepackage{pdflscape}
+\usepackage{MnSymbol}
+
+\def\nbrcircles {377}
+\def\outerradius {30mm}
+\def\deviation {.9}
+\def\fudge {.62}
+
+\newcounter{cumulArea}
+\setcounter{cumulArea}{0}
+
+\usepackage{tabularx}
+
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\font\maxi=cminch scaled 300
+
+\usepackage{tgadventor}
+%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+\newcommand*{\myfont}{\fontfamily{\sfdefault}\selectfont}
+\usepackage{pacioli}
+\usepackage[OT1]{fontenc}
+%\newcommand*{\myfont1}{\fontfamily{\cpcfamily}\selectfont}
+\renewcommand{\baselinestretch}{1.5}
+
+\def\dash---{\kern.16667em---\penalty\exhyphenpenalty\hskip.16667em\relax}
+ \geometry{
+ a4paper,
+ total={180mm,267mm},
+ left=20mm,
+ top=15mm,
+ }
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+%\section*{Pacioli}
+%\subsection*{\textbackslash cpcfamily}
+\begingroup
+\normalfont\cpcfamily
+\maxi {INTRODUCTION TO BIOINFORMATICS}
+\endgroup
+\end{center}
+%%\begin{center}
+%%\begingroup
+%%  \myfont {\Huge {Introduction to Bioinformatics}}
+%%\endgroup
+%%\end{center}
+
+\begingroup
+\huge\raggedright\centering%
+%\includegraphics[scale=1.1,width=25cm,height=5cm,keepaspectratio]{nyu-scps-logo-lg}
+Special Topics Science Course \dash--- 2 credits\\
+May 25th \dash--- June 29th Wednesdays 6:20pm\dash--- 9:30pm\\Prof. Christos Noutsos\\
+%\maxi {Introduction to Bioinformatics}\par\vspace{8pt}\hrule height3pt
+\par\vspace{0.5cm}
+\endgroup
+
+\begingroup \large \setstretch{1}
+Are you interested in learning about how biological data can be classified and analyzed? Are you curious about  personalized medicine, and what is needed to make it into a reality? In this Summer special topics course you will explore the methods and software used in bioinformatics to classify, represent and understand biological data.
+
+\par\vspace{0.5cm}
+
+\begingroup
+\normalfont\cpcfamily
+\large {COURSE OBJECTIVES}
+\endgroup
+
+\begin{itemize}%[label=$\blacktriangleright$ {\bf  \arabic*:}]
+\item[\dash---] Understand what the scientific method is and how it is applied to bioinformatics;
+\item[\dash---] Outline the history of bioinformatics and the main questions addressed in the field; 
+\item[\dash---] Learn the basic vocabulary, methods and tools used in bioinformatics through laboratory modules;
+\item[\dash---] Be conversant in the ethical issues raised by bioinformatics, such as analysis and accessibility of data involving personal genetic information.
+\end{itemize}
+
+
+Prof. Noutsos is a researcher at Cold Spring Harbor Laboratory and teaches Human Genetics at NYU-SPS McGhee. Prof. Noutsos' teaching has been highly praised by McGhee students. Here are a few comments from students in his Fall'15 class:
+
+\begin{itemize}
+\item[$\largediamond$] Professor Noutsos was able to teach at just the right pace, and gave a great beginner foundation to build on. I really enjoyed this class so much and I am interested in learning more about careers in this field!
+\item[$\largediamond$] The Professor was always prepared with lectures and presentations but also regular homework.
+\item[$\largediamond$] Great use of NYU classes (Documents were uploaded to Resources folder) We also used JOVE website for fantastic videos on genetics that really helped me to understand the terminology and applications of the tools used in genetics.
+\end{itemize}
+\endgroup
+
+\begin{center}
+%%%\stubs[10]{4cm}[]{{{\tt Bioinformatics} course}\\Prof. C. Noutsos\\ \href{mailto:cn34s@nyu.edu}{cn34@nyu.edu}}
+\ovalbox{\large\bf{This course has no prerequisites, and no coding experience is required.}} \par
+\end{center}
+
+
+
+\end{document}

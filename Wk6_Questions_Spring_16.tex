@@ -1,0 +1,84 @@
+\documentclass[11pt,dvipsnames]{article}
+
+\usepackage{etex}
+\usepackage{amssymb,amsmath,multicol} %<-- InWorksheetExam1 i also have fancyhdr,
+
+\usepackage[metapost]{mfpic}
+\usepackage[pdftex]{graphicx}
+
+\usepackage{pst-plot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\usepackage{tikz}
+\usepackage{tkz-2d}
+\usepackage{tkz-base}
+\usetikzlibrary{calc}
+\usepackage{color}
+\usepackage[inline]{enumitem}
+\usepackage{refcount}%<-- non in WorksheetExam1
+
+\usepackage[linewidth=1pt]{mdframed}
+
+\usepackage{caption}
+%\renewcommand{\headrulewidth}{0pt}
+
+%%These three lines are for the typewriter font. Comment them out if I don't want the font.
+%%%%%%\renewcommand*\ttdefault{lcmtt}
+%%%%%%\renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
+%%%%%%\usepackage[T1]{fontenc}
+%%%%%%
+
+\usepackage{tabularx, booktabs}
+
+\opengraphsfile{Wk6_Questions_Spring_16}
+
+\begin{document}
+%\thispagestyle{empty}
+\begin{enumerate}[label= {\bf  \arabic*:}]
+	\item True or False?
+	\begin{enumerate}
+		\item $\displaystyle \frac{1}{x+y}=\frac{1}{x}+\frac{1}{y}$
+		\item $\displaystyle \frac{y}{x+y}=\frac{1}{x}$
+	\end{enumerate}
+	\item  A car is driven 10,000 miles. Write a formula for the gas consumption $y$ (in gallons) if the car gets $x$ miles per gallon (mpg).
+\item \label{item:bah}Many people are concerned with improving gas mileage of cars to reduce the impact of
+greenhouse gases on the environment. Assume that a person drives 10,000 miles per year and is
+contemplating changing from a current vehicle to a new one.
+Rank order the following changes in vehicles in terms of their benefit to the environment (i.e.,
+which new car would reduce gas consumption the most compared to the amount used by the
+original car). Use the ranks 1, 2, 3, 4, and 5. Use 1 for the change that would reduce gas
+consumption the most compared to the original car, and 5 for the change that would reduce gas
+consumption the least compared to the original car. 
+
+
+\begin{tabular}{|l|l|l|}
+\hline
+Original car & New car & Rank \\ \hline
+16 mpg & 20 mpg &  \\ \hline
+22 mpg & 24 mpg &  \\ \hline
+18 mpg & 28 mpg &  \\ \hline
+34 mpg & 50 mpg &  \\ \hline
+42 mpg & 48 mpg &  \\ \hline
+\end{tabular}
+
+Note: Question~\ref{item:bah} was created by two professors at the Fuqua School of Business at Duke University, Richard Larrick and Jack Soll, as an example for a paper they published in {\emph{Science}} in 2008.
+\item  You are offered two different deals on a product: the first deal offers you a 33\% discount on the price $P$ of a product, while the second deal offers you 33\% more product  for the price $P$. Which of the two options is the best deal, and why? Or are the two options equivalent?
+\item An alcohol solution consists of 10 gallons of water and $x$ gallons of alcohol. Let $f(x)$ be the ration of the volume of alcohol to the total volume of liquid.
+\begin{enumerate}
+	\item Find a formula for $f(x)$.
+	\item  Evaluate $f(1)$ and explain what it means in the context of this problem.
+	\item What is the $x$ intercept of $f(x)$? What does it mean in the context of this problem?
+	\item As $x$ becomes larger and larger, what happens to the outputs of $f(x)$? For example, do they become larger and larger ($f(x)\to \infty$)? Do they get closer and closer to a fixed number? What does your answer mean in the context of this problem?
+	
+\end{enumerate}
+\item For each of the functions listed below, find the domain, the $y$-intercept, and the $x$-intercept(s). 
+\begin{enumerate}
+	\item $\displaystyle f(x)=\frac{1}{x-1}$. (Note: this is a transformation of $\displaystyle y=\frac{1}{x}$) As $x\to \infty, f(x)\to \ldots$
+	\item $\displaystyle g(x)=\frac{x-2}{x^2-1}$.  Find $g(1.1), g(1.01), g(1.001), g(1.0001)$. What happens to the $y$ values of this function as I replace $x$ with numbers bigger than 1 and getting closer and closer to 1?
+	\item $\displaystyle g(x)=\frac{x-2}{x^2+1}$.
+	
+\end{enumerate}
+\end{enumerate}
+
+\end{document}                 
